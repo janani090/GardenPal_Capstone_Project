@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GardenPal Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+
+    <nav class="navbar">
+        <div class="logo">GardenPal</div>
+    </nav>
+   
+    <div class="login-container">
+        <div class="login-card">
+            <h2>Welcome Back 🌱</h2>
+            <p>Log in to access your garden dashboard</p>
+
+
+            <form action="/login" method="POST">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+
+
+                <button type="submit">Login</button>
+            </form>
+
+
+            <div class="links">
+                <a href="#">Forgot password?</a>
+                <span>•</span>
+                <a href="#">Create account</a>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
+
+
