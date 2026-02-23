@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Feed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="live-feed.css">
+
+</head>
+<body>
+<header>
+    
+    <div class="logo">GardenPal</div>
+
+    <nav>
+        <button class="active">Live Feed</button>
+        <button>My Plants</button>
+        <button>Weather</button>
+    </nav>
+
+    <div class="profile">👤</div>
+</header>
+<main>
+    <section class="camera-section">
+        <h2>Live Camera Feed for Plant</h2>
+        <p>Motion last detected 10 minutes ago</p>
+
+        <div class="camera-box">
+            <img id="feedImage" src="deer.avif" alt="Live Camera Feed">
+        </div>
+
+        <div class="pagination">
+            <button id="prevBtn">◀</button>
+            <button class="active pageBtn" data-index="0">1</button>
+            <button class="pageBtn" data-index="1">2</button>
+            <button class="pageBtn" data-index="2">3</button>
+            <button id="nextBtn">▶</button>
+        </div>
+
+
+    </section>
+
+    <section class="alerts-section">
+
+  <div class="alert-card">
+    <div class="alert-icon">💧</div>
+    <div class="alert-text">
+      <h3>Low Moisture Levels</h3>
+      <p class="time">5 minutes ago</p>
+      <p>We detected low moisture levels for Plant #1.</p>
+    </div>
+  </div>
+
+  <div class="alert-card">
+    <div class="alert-icon">🦌</div>
+    <div class="alert-text">
+      <h3>Predator Detected</h3>
+      <p class="time">2 hours ago</p>
+      <p>We detected a deer in the vicinity of Plant #2. Deterrent mechanism activated.</p>
+    </div>
+  </div>
+
+  <div class="alert-card">
+    <div class="alert-icon">☀️</div>
+    <div class="alert-text">
+      <h3>High Sunlight Levels</h3>
+      <p class="time">2 days ago</p>
+      <p>We have detected high sunlight levels for Plant #1. Please take care to water more this week.</p>
+    </div>
+  </div>
+
+</section>
+
+</main>
+<div class="footer-strip"></div>
+<script src="live-feed.js"></script>
+</body>
+</html>
