@@ -1,0 +1,156 @@
+:root {
+  --green-dark: #2D5B42;
+  --green-darker: #011B0D;
+  --green-bg: #EEF4ED;
+  --white: #FFFFFF;
+  --gray: #D9D9D9;
+  --text-muted: rgba(0,0,0,0.55);
+  --border-green: rgba(45,91,66,0.55);
+}
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+background:var(--green-bg);
+color:var(--green-darker);
+}
+
+
+/* HEADER */
+
+header{
+background:var(--white);
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:18px 36px;
+}
+
+.logo{
+font-size:52px;
+font-weight:900;
+color:var(--green-dark);
+letter-spacing:-0.5px;
+}
+
+nav{
+background:#F0F0F0;
+padding:12px 16px;
+border-radius:999px;
+display:flex;
+gap:10px;
+}
+
+nav button{
+border:none;
+background:transparent;
+padding:10px 22px;
+border-radius:999px;
+cursor:pointer;
+font-size:15px;
+font-weight:600;
+}
+
+.profile-icon{
+width:56px;
+height:56px;
+border-radius:999px;
+background:#38A04B;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:24px;
+color:white;
+}
+
+
+/* MAIN PROFILE AREA */
+
+.profile-wrapper{
+padding:40px 36px;
+background:#cfd6cc;
+}
+
+
+.profile-container{
+background:#F7F7F7;
+border-radius:40px;
+border:1px solid rgba(45,91,66,0.45);
+padding:80px 60px;
+text-align:center;
+}
+
+
+/* PROFILE IMAGE */
+
+.profile-avatar{
+width:140px;
+height:140px;
+margin:auto;
+border-radius:999px;
+background:#38A04B;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:70px;
+color:white;
+}
+
+
+.username{
+margin-top:20px;
+font-size:26px;
+font-weight:700;
+}
+
+
+/* INNER CARD */
+
+.profile-card{
+margin:40px auto 0;
+max-width:1000px;
+
+background:white;
+border-radius:32px;
+border:1px solid rgba(45,91,66,0.45);
+
+padding:50px 80px;
+
+text-align:left;
+}
+
+
+/* DATA ROWS */
+
+.row{
+display:grid;
+grid-template-columns:220px 1fr;
+padding:16px 0;
+font-size:20px;
+}
+
+.label{
+font-weight:600;
+}
+
+.value{
+color:#222;
+}
+
+.links{
+margin-top:30px;
+display:flex;
+flex-direction:column;
+gap:16px;
+}
+
+.links a{
+color:var(--green-dark);
+text-decoration:none;
+font-weight:600;
+font-size:20px;
+}

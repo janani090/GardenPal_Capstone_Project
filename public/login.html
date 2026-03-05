@@ -1,43 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GardenPal Login</title>
-    <link rel="stylesheet" href="login.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GardenPal Login</title>
+<link rel="stylesheet" href="login.css">
 </head>
+
 <body>
 
-
-    <nav class="navbar">
-        <div class="logo">GardenPal</div>
-    </nav>
-   
-    <div class="login-container">
-        <div class="login-card">
-            <h2>Welcome Back 🌱</h2>
-            <p>Log in to access your garden dashboard</p>
+<header>
+    <div class="logo">GardenPal</div>
+</header>
 
 
-            <form action="/login" method="POST">
-                <input type="text" name="username" placeholder="Username" required>
-                <input type="password" name="password" placeholder="Password" required>
+<main class="login-main">
 
+    <div class="login-card">
 
-                <button type="submit">Login</button>
-            </form>
+        <h2 style="text-align: center;">Welcome Back 🌱</h2>
+        <p style="text-align: center;" class="login-subtext">Log in to access your garden dashboard</p>
 
+        <form action="/login" method="POST">
 
-            <div class="links">
-                <a href="#">Forgot password?</a>
-                <span>•</span>
-                <a href="#">Create account</a>
-            </div>
+            <label>Username</label>
+            <input type="text" name="username" required>
+
+            <label>Password</label>
+            <input type="password" name="password" required>
+
+            <button type="submit">Login</button>
+
+        </form>
+
+        <div class="login-links">
+            <a href="#">Forgot password?</a>
+            <span>•</span>
+            <a href="#">Create account</a>
         </div>
+
     </div>
 
+</main>
+
+<div class="footer-strip"></div>
 
 </body>
 </html>
-
-
