@@ -5,6 +5,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="live-feed.css">
 
 </head>
@@ -14,12 +15,16 @@
     <div class="logo">GardenPal</div>
 
     <nav>
-        <button class="navBtn" data-page="live">Live Feed</button>
+        <button class="navBtn active" data-page="live">Live Feed</button>
         <button class="navBtn" data-page="myplants">My Plants</button>
         <button class="navBtn" data-page="weather">Weather</button>
     </nav>
 
-    <div class="profile">👤</div>
+    <div class="profile"><button class="navBtn" data-page="profile" 
+        style="background: transparent; 
+        border: none; 
+        font-size: 22px;
+        cursor: pointer;">👤</button></div>
 </header>
 <main>
     <section class="camera-section">
@@ -67,33 +72,28 @@
 <div class="footer-strip"></div>
 
 <script>
-  const routes = {
-    live: "live-feed.html",
-    myplants: "myplants.html",
-    weather: "weather.html"
-  };
-
-  document.querySelectorAll(".navBtn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const page = btn.dataset.page;
-      window.location.href = routes[page];
+    const routes = {
+        live: "live-feed.html",
+        myplants: "myplants.html",
+        weather: "weather.html",
+        profile: "account.html"
+    };
+    document.querySelectorAll(".navBtn").forEach(btn =>{
+        btn.addEventListener("click", () =>{
+            const page = btn.dataset.page;
+            window.location.href = routes[page];
+        });
     });
-  });
+</script>
 
-  const pageMap = {
-    "live-feed": "live",
-    "myplants": "myplants",
-    "weather": "weather"
-  };
+<script>
+    const currentPage = window.location.pathname.split("/").pop().replace(".html", "");
 
-  const currentFile = window.location.pathname.split("/").pop().replace(".html", "");
-  const currentPage = pageMap[currentFile] || currentFile;
-
-  document.querySelectorAll(".navBtn").forEach(btn => {
-    if (btn.dataset.page === currentPage) {
-      btn.classList.add("active");
-    }
-  });
+    document.querySelectorAll(".navBtn").forEach(btn => {
+        if (btn.dataset.page === currentPage){
+            btn.classList.add("active");
+        }
+    });
 </script>
 </body>
 </html>
