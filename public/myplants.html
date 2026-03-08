@@ -10,19 +10,15 @@
 
     <div class="page-container">
         <header class="topbar">
-            <div class="logo-selection">
-                <span class="logo-text">GardenPal</span>
-            </div>
+            <div class="logo">GardenPal</div>
 
-            <nav class="top-tabs">
-                <a href="#" class="tab">Live Feed</a>
-                <a href="#" class="tab active">My Plants</a>
-                <a href="#" class="tab">Settings</a>
-            </nav>            
+            <nav>
+                <button class="navBtn" data-page="live">Live Feed</button>
+                <button class="navBtn" data-page="myplants">My Plants</button>
+                <button class="navBtn" data-page="weather">Weather</button>
+            </nav>
 
-            <div class="user-section">
-                <img src="images/user.png" class="user-img" alt="User Icon">
-            </div>
+            <div class="profile">👤</div>
         </header>
 
         <div class="layout">
@@ -37,7 +33,7 @@
                             <rect y="18" width="24" height="2" rx="1" fill="#333"/>
                         </svg>
                     </button>
-                    <h3 class="sidebar=title">Garden at a Glance</h3>
+                    <h3 class="sidebar-title">Garden at a Glance</h3>
                 </div>
 
                 <div class="sidebar-card">
@@ -135,5 +131,31 @@
             sidebar.classList.toggle("collapsed");
         });
     </script>
+
+    <script>
+        const routes = {
+            live: "live-feed.html",
+            myplants: "myplants.html",
+            weather: "weather.html"
+        };
+        document.querySelectorAll(".navBtn").forEach(btn =>{
+            btn.addEventListener("click", () =>{
+                const page = btn.dataset.page;
+                window.location.href = routes[page];
+            });
+        });
+    </script>
+
+    <script>
+        const currentPage = window.location.pathname.split("/").pop().replace(".html", "");
+
+        document.querySelectorAll(".navBtn").forEach(btn => {
+            if (btn.dataset.page === currentPage){
+                btn.classList.add("active");
+            }
+        });
+    </script>
+
+
 </body>
 </html>

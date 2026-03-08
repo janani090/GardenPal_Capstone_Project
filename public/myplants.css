@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 body {
     margin: 0;
-    font-family: Inter, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background: #F3F8F4;
 }
 
@@ -12,73 +13,73 @@ body {
     overflow-x: hidden;
 }
 
-.topbar {
-    height: 103px;
-    background: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 24px;
-    border-bottom: 1px solid black;
-    width: 100%;
-    box-sizing: border-box;
+header {
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 36px;
 }
+
+.logo {
+  font-size: 52px;
+  font-weight: 900;
+  color: #2D5B42;
+  letter-spacing: -0.5px;
+}
+
+nav {
+  background: #F0F0F0;
+  padding: 12px 16px;
+  border-radius: 999px;
+  display: flex;
+  gap: 10px;
+}
+
+nav button {
+  border: none;
+  background: transparent;
+  padding: 10px 22px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  color: #2D5B42;
+}
+
+nav button.active {
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.profile {
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: #38A04B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 22px;
+}
+
 
 .section-wrapper{
     width: 100%;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     background: #F3F8F4;
-    min-height: 900px;
+    display: block;
+}
+
+.layout {
     display: flex;
-}
-
-.logo-section {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo-img {
-    height: 36px;
-    width: 36px;
-}
-
-.logo-text {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 800;
-    font-size: 56px;
-    color: #1F4D2B;
-}
-
-.top-tabs{
-    display: flex;
-    gap: 24px;
-}
-
-.tab{
-    text-decoration: none;
-    color: #444;
-    font-size: 16px;
-    padding-bottom: 4px;
-}
-
-.tab.active {
-    border-bottom: 3px solid #2E6B3F;
-    color: #2E6B3F;
-    font-weight: 600;
-}
-
-.user-section{
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.user-img {
-    height: 36px;
-    width: 36px;
-    border-radius: 50%;
+    width: 100%;
+    padding: 40px 24px;
+    gap: 40px;
+    box-sizing: border-box;
+    flex: 1;
 }
 
 .hamburger {
@@ -90,16 +91,6 @@ body {
     align-items: center;
 }
 
-.layout {
-    display: flex;
-    width: 100%;
-    padding: 40px 24px;
-    gap: 40px;
-    box-sizing: border-box;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-}
-
 .sidebar {
     width: 360px;
     background: #EAEAEA;
@@ -108,6 +99,7 @@ body {
     border: 1px solid black;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 20px;
     flex-shrink: 0;
     align-self: stretch;
@@ -116,31 +108,15 @@ body {
 
 .sidebar-title{
     margin: 0;
-    font-size: 18px;
-    font-weight: 600;
-}
-
-.sidebar.collapsed {
-    width: auto;
-    padding: 0;
-    background: none;
-    border: none;
+    font-size: 26px;
+    font-weight: 700;
 }
 
 .sidebar-header {
     display: flex;
     align-items: center;
     gap: 12px;
-}
-
-.sidebar.collapsed .sidebar-card,
-.sidebar.collapsed .sidebar-title
-.sidebar.collapsed .sidebar-header h3{
-    display: none;
-}
-
-.sidebar.collapsed .hamburger{
-    margin: 0;
+    margin-bottom: 12px;
 }
 
 .sidebar-card {
@@ -148,6 +124,44 @@ body {
     padding: 16px;
     border-radius: 12px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    text-align: center;
+    flex: 1;
+}
+
+.sidebar-card ul {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.sidebar-card h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 0;
+}
+
+.health-summary .healthy {color: #2E7D32; }
+.health-summary .need-water {color: #F9A825; }
+.health-summary .at-risk {color: #C62828; }
+
+
+.sidebar.collapsed {
+    width: auto;
+    padding: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
+    min-height: 0;
+}
+
+.sidebar.collapsed .sidebar-card,
+.sidebar.collapsed .sidebar-title,
+.sidebar.collapsed .sidebar-header h3{
+    display: none !important;
+}
+
+.sidebar.collapsed .hamburger{
+    margin: 0;
+    padding: 0;
 }
 
 .main {
@@ -173,12 +187,25 @@ body {
     align-items: center;
 }
 
+.main-header h1{
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.plants-caption{
+    margin: 4px 0 0 0;
+    color: #777;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
 .add-btn {
     background: #2E6B3F;
     color: white;
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 13px;
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 600;
     cursor: pointer;
     border: 1px solid black;
 }
@@ -186,59 +213,59 @@ body {
 .plant-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: 28px;
     margin-top: 24px;
 }
 
 .plant-card {
     background: #FFFFFF;
-    padding: 18px;
-    border-radius: 10px;
+    padding: 24px;
+    border-radius: 14px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
     border: 1px solid black;
-    font-size: 16px;
-    line-height: 1.4;
+    font-size: 17px;
+    line-height: 1.5;
+    text-align: center;
+    min-height: 190px;
 }
 
 .plant-card h3{
-    font-size: 18px;
-    margin-bottom: 10px;
+    font-size: 20px;
+    margin-bottom: 12px;
 }
 
 .plant-card p {
-    margin: 4px 0;
+    margin: 6px 0;
 }
 
 .status {
     display: inline-block;
-    margin-top: 10px;
-    padding: 6px 10px;
-    border-radius: 6px;
-    font-size: 13px;
+    margin-top: 14px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 14px;
     font-weight: 600;
 }
 
-.healthy { color: #2E7D32; }
-.need-water{ color: #F9A825; }
-.at-risk { color: #C62828; }
+.healthy,
+.need-water,
+.at-risk{
+    color: inherit;
+}
 
 .plant-card.healthy .status {
     background: #E8F5E9;
+    color: #2E7D32;
 }
 
 .plant-card.need-water .status {
     background: #FFF8E1;
+    color: #F9A825;
 }
 
 .plant-card.at-risk .status {
     background: #FFEBEE;
-}
-
-.plants-caption{
-    margin: 2px 0 0 0;
-    color: #777;
-    font-size: 14px;
-    margin-bottom: 8px;
+    color: #C62828;
 }
 
 .footer {
