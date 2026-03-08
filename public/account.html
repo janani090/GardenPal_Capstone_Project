@@ -6,6 +6,11 @@
 
 <title>Your GardenPal Account</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="account.css">
@@ -14,18 +19,22 @@
 
 <body>
 
-<header>
 
+<header>
+    
 <div class="logo">GardenPal</div>
 
 <nav>
-<button>Live Feed</button>
-<button>My Plants</button>
-<button>Weather</button>
+<button class="navBtn" data-page="live">Live Feed</button>
+<button class="navBtn" data-page="myplants">My Plants</button>
+<button class="navBtn" data-page="weather">Weather</button>
 </nav>
 
-<div class="profile-icon">👤</div>
-
+<div class="profile"><button class="navBtn" data-page="profile" 
+style="background: transparent; 
+border: none; 
+font-size: 22px;
+cursor: pointer;">👤</button></div>
 </header>
 
 
@@ -72,4 +81,28 @@
 </section>
 
 </body>
+<script>
+    const routes = {
+        live: "live-feed.html",
+        myplants: "myplants.html",
+        weather: "weather.html",
+        profile: "account.html"
+    };
+    document.querySelectorAll(".navBtn").forEach(btn =>{
+        btn.addEventListener("click", () =>{
+            const page = btn.dataset.page;
+            window.location.href = routes[page];
+        });
+    });
+</script>
+
+<script>
+    const currentPage = window.location.pathname.split("/").pop().replace(".html", "");
+
+    document.querySelectorAll(".navBtn").forEach(btn => {
+        if (btn.dataset.page === currentPage){
+            btn.classList.add("active");
+        }
+    });
+</script>
 </html>

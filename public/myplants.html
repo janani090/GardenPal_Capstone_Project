@@ -18,7 +18,11 @@
                 <button class="navBtn" data-page="weather">Weather</button>
             </nav>
 
-            <div class="profile">👤</div>
+            <div class="profile"><button class="navBtn" data-page="profile" 
+                style="background: transparent; 
+                border: none; 
+                font-size: 22px;
+                cursor: pointer;">👤</button></div>
         </header>
 
         <div class="layout">
@@ -136,7 +140,8 @@
         const routes = {
             live: "live-feed.html",
             myplants: "myplants.html",
-            weather: "weather.html"
+            weather: "weather.html",
+            profile: "account.html"
         };
         document.querySelectorAll(".navBtn").forEach(btn =>{
             btn.addEventListener("click", () =>{
