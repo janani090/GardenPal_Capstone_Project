@@ -50,6 +50,8 @@ nav {
 }
 
 nav button {
+  font-family: 'Poppins';
+  font-style: normal;
   border: none;
   background: transparent;
   padding: 10px 22px;

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="weather.css">
+</head>
+
+<body>
+<header>
+    
+    <div class="logo">GardenPal</div>
+
+    <nav>
+        <a href="live-feed.html"><button>Live Feed</button></a>
+        <a href="live-feed.html"><button>My Plants</button></a>
+        <a href="weather.html"><button class="active">Weather</button></a>
+    </nav>
+
+    <div class="profile">👤</div>
+</header>
+
+<main>
+    <div class="website-design-card">
+        <div class="weather-title">
+            <p class="weather-report-text">Weather Report</p>
+        </div>
+
+        <div class="line-2-weather-box"></div>
+
+        <div class="top-section">
+            <div class="today-card">
+                <div class="today-title-card">
+                    <div class="today-title">Today, Feb 2nd</div>
+                </div>
+                
+                <div class="today-main">
+                    <div class="today-img">☀</div>
+                    <div class="today-temp">15°F</div>
+                </div>
+
+                <div class="today-report-box">
+                    <div class="line-border"></div>
+                    <div class="today-report-text">
+                        <h3 style="color: #2D5B42;">Monday's Weather Report</h3>
+                        <p style="text-align: center; color: #2D5B42;"><strong>Precipitation:</strong> 10%</p>
+                        <p style="text-align: center; color: #2D5B42;"><strong>Humidity:</strong> 53%</p>
+                        <p style="text-align: center; color: #2D5B42;"><strong>Wind:</strong> 13 mph</p>
+                        <p style="text-align: center; color: #2D5B42;">Low Rain and High Wind Levels</p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="precip-card">
+                <div class="precip-title-card">
+                    <div class="precip-title">Precipitation Graph</div>
+                </div>
+                <div class="precip-img"></div>
+            </div>
+        </div>
+    
+        <div class=weekly-weather>
+            <div class="day-card">
+                <p class="day-title">Tue</p>
+                <img class="day-1-img">
+                <p class="day-report">Sunny</p>
+                <p class="day-temp">16°F</p>
+            </div>
+            <div class="day-card">
+                <p class="day-title">Wed</p>
+                <img class="day-2-img">
+                <p class="day-report">Sunny</p>
+                <p class="day-temp">16°F</p>
+            </div>
+            <div class="day-card">
+                <p class="day-title">Thur</p>
+                <img class="day-3-img">
+                <p class="day-report">Sunny</p>
+                <p class="day-temp">16°F</p>
+            </div>
+            <div class="day-card">
+                <p class="day-title">Fri</p>
+                <img class="day-4-img">
+                <p class="day-report">Sunny</p>
+                <p class="day-temp">16°F</p>
+            </div>
+            <div class="day-card">
+                <p class="day-title">Sat</p>
+                <img class="day-5-img">
+                <p class="day-report">Sunny</p>
+                <p class="day-temp">16°F</p>
+            </div>
+        </div>
+    </div>
+</main>
+<div class="footer-strip"></div>
+<script src="weather.js"></script>
+
+</body>
+</html>
