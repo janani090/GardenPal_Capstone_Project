@@ -19,9 +19,6 @@ background:var(--green-bg);
 color:var(--green-darker);
 }
 
-
-/* HEADER */
-
 header{
 background:var(--white);
 display:flex;
@@ -47,7 +44,6 @@ gap: 10px;
 
 nav button {
 font-family: 'Poppins';
-font-style: normal;
 border: none;
 background: transparent;
 padding: 10px 22px;
@@ -56,12 +52,20 @@ cursor: pointer;
 font-size: 15px;
 font-weight: 600;
 color: var(--green-darker);
+transition: 0.2s;
 }
 
 nav button.active {
 background: var(--white);
 box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
+
+nav button:hover{
+background:rgba(255,255,255,0.6);
+}
+
+
+/* PROFILE ICON */
 
 .profile {
 width: 56px;
@@ -91,17 +95,27 @@ color:white;
 /* MAIN PROFILE AREA */
 
 .profile-wrapper{
-padding:40px 36px;
+padding:60px 20px;
 background:#cfd6cc;
-}
 
+display:flex;
+justify-content:center;
+align-items:center;
+}
 
 .profile-container{
 background:#F7F7F7;
 border-radius:40px;
 border:1px solid rgba(45,91,66,0.45);
-padding:80px 60px;
+
+padding:60px;
+
 text-align:center;
+
+width:100%;
+max-width:900px;
+
+box-shadow:0 8px 30px rgba(0,0,0,0.08);
 }
 
 
@@ -111,13 +125,18 @@ text-align:center;
 width:140px;
 height:140px;
 margin:auto;
+
 border-radius:999px;
 background:#38A04B;
+
 display:flex;
 align-items:center;
 justify-content:center;
+
 font-size:70px;
 color:white;
+
+box-shadow:0 6px 18px rgba(0,0,0,0.15);
 }
 
 
@@ -132,45 +151,69 @@ font-weight:700;
 
 .profile-card{
 margin:40px auto 0;
-max-width:1000px;
+
+width:100%;
+max-width:650px;
 
 background:white;
 border-radius:32px;
 border:1px solid rgba(45,91,66,0.45);
 
-padding:50px 80px;
+padding:40px 50px;
 
 text-align:left;
+
+box-shadow:0 4px 16px rgba(0,0,0,0.06);
 }
 
 
 /* DATA ROWS */
 
 .row{
-display:grid;
-grid-template-columns:220px 1fr;
-padding:16px 0;
-font-size:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:14px 0;
+
+font-size:18px;
+
+border-bottom:1px solid rgba(0,0,0,0.05);
+}
+
+.row:last-child{
+border-bottom:none;
 }
 
 .label{
 font-weight:600;
+color:#333;
 }
 
 .value{
-color:#222;
+color:#444;
+font-weight:500;
 }
+
+
+/* ACCOUNT LINKS */
 
 .links{
 margin-top:30px;
 display:flex;
 flex-direction:column;
-gap:16px;
+gap:14px;
+align-items:flex-start;
 }
 
 .links a{
 color:var(--green-dark);
 text-decoration:none;
 font-weight:600;
-font-size:20px;
+font-size:18px;
+transition:0.2s;
+}
+
+.links a:hover{
+opacity:0.7;
 }
