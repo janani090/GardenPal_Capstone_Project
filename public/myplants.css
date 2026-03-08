@@ -1,0 +1,254 @@
+body {
+    margin: 0;
+    font-family: Inter, sans-serif;
+    background: #F3F8F4;
+}
+
+.page-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.topbar {
+    height: 103px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    border-bottom: 1px solid black;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.section-wrapper{
+    width: 100%;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    background: #F3F8F4;
+    min-height: 900px;
+    display: flex;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    height: 36px;
+    width: 36px;
+}
+
+.logo-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 56px;
+    color: #1F4D2B;
+}
+
+.top-tabs{
+    display: flex;
+    gap: 24px;
+}
+
+.tab{
+    text-decoration: none;
+    color: #444;
+    font-size: 16px;
+    padding-bottom: 4px;
+}
+
+.tab.active {
+    border-bottom: 3px solid #2E6B3F;
+    color: #2E6B3F;
+    font-weight: 600;
+}
+
+.user-section{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-img {
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+}
+
+.hamburger {
+    background: none;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.layout {
+    display: flex;
+    width: 100%;
+    padding: 40px 24px;
+    gap: 40px;
+    box-sizing: border-box;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.sidebar {
+    width: 360px;
+    background: #EAEAEA;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-shrink: 0;
+    align-self: stretch;
+    box-sizing: border-box;
+}
+
+.sidebar-title{
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.sidebar.collapsed {
+    width: auto;
+    padding: 0;
+    background: none;
+    border: none;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sidebar.collapsed .sidebar-card,
+.sidebar.collapsed .sidebar-title
+.sidebar.collapsed .sidebar-header h3{
+    display: none;
+}
+
+.sidebar.collapsed .hamburger{
+    margin: 0;
+}
+
+.sidebar-card {
+    background: white;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.main {
+    display: flex;
+    align-items: flex-start;
+    flex: 1;
+    background: #F3F8F4;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.content-box {
+    width: 100%;
+    max-width: none;
+    height: auto;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-btn {
+    background: #2E6B3F;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.plant-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.plant-card {
+    background: #FFFFFF;
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    border: 1px solid black;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.plant-card h3{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.plant-card p {
+    margin: 4px 0;
+}
+
+.status {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.healthy { color: #2E7D32; }
+.need-water{ color: #F9A825; }
+.at-risk { color: #C62828; }
+
+.plant-card.healthy .status {
+    background: #E8F5E9;
+}
+
+.plant-card.need-water .status {
+    background: #FFF8E1;
+}
+
+.plant-card.at-risk .status {
+    background: #FFEBEE;
+}
+
+.plants-caption{
+    margin: 2px 0 0 0;
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.footer {
+    height: 160px;
+    width: 100%;
+    background: #2D5B42;
+    border-top: 1px solid black;
+    margin-top: 0;
+}
+
+.main, .side {
+    align-self: stretch;
+}

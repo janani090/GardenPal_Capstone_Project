@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GardenPal Dashboard</title>
+    <link rel="stylesheet" href="myplants.css">
+</head>
+
+<body>
+
+    <div class="page-container">
+        <header class="topbar">
+            <div class="logo-selection">
+                <span class="logo-text">GardenPal</span>
+            </div>
+
+            <nav class="top-tabs">
+                <a href="#" class="tab">Live Feed</a>
+                <a href="#" class="tab active">My Plants</a>
+                <a href="#" class="tab">Settings</a>
+            </nav>            
+
+            <div class="user-section">
+                <img src="images/user.png" class="user-img" alt="User Icon">
+            </div>
+        </header>
+
+        <div class="layout">
+
+            <aside class="sidebar" id="sidebar">
+
+                <div class="sidebar-header">
+                    <button class="hamburger" id="toggleSidebar">
+                        <svg width="24" height="24" viewBox="0 0 24 24">
+                            <rect y="4" width="24" height="2" rx="1" fill="#333"/>
+                            <rect y="11" width="24" height="2" rx="1" fill="#333"/>
+                            <rect y="18" width="24" height="2" rx="1" fill="#333"/>
+                        </svg>
+                    </button>
+                    <h3 class="sidebar=title">Garden at a Glance</h3>
+                </div>
+
+                <div class="sidebar-card">
+                    <h2>Overall Plant Health</h2>
+                    <ul class="health-summary">
+                        <li class="healthy">3 Healthy</li>
+                        <li class="need-water">2 Need Water</li>
+                        <li class="at-risk">1 At Risk</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-card">
+                    <h2>Actions Needed</h2>
+                    <ul class="actions">
+                        <li>Water Plant #5 and Plant #6 today</li>
+                        <li>Move Plant #2 to shadier area</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-card">
+                    <h2>Last Sensor Update</h2>
+                    <p class="last-updated">Last updated 6 minutes ago</p>
+                </div>
+
+            </aside>
+
+            <main class="main">
+
+                <div class="content-box">
+
+                    <div class="main-header">
+                        <div>
+                            <h1>My Plants</h1>
+                            <p class="plants-caption">Live insights from your monitored plants</p>
+                        </div>
+                        <button class="add-btn">+ Add Plant</button>
+                    </div>
+
+                    <div class="plant-grid">
+
+                        <div class="plant-card healthy">
+                            <h3>Plant #1 - Hydrangea</h3>
+                            <p>Sunlight: 5.5 hours today</p>
+                            <p>Moisture: 50%</p>
+                            <span class="status">Healthy</span>
+                        </div>
+
+                        <div class="plant-card at-risk">
+                            <h3>Plant #2 - Dandelion</h3>
+                            <p>Sunlight: 6.2 hours today</p>
+                            <p>Moisture: 20%</p>
+                            <span class="status">At Risk</span>
+                        </div>
+
+                        <div class="plant-card healthy">
+                            <h3>Plant #3 - Zinnia</h3>
+                            <p>Sunlight: 5.6 hours today</p>
+                            <p>Moisture: 40%</p>
+                            <span class="status">Healthy</span>
+                        </div>
+
+                        <div class="plant-card healthy">
+                            <h3>Plant #4 - Orchid</h3>
+                            <p>Sunlight: 4.5 hours today</p>
+                            <p>Moisture: 90%</p>
+                            <span class="status">Healthy</span>
+                        </div>
+
+                        <div class="plant-card need-water">
+                            <h3>Plant #5 - Tulip</h3>
+                            <p>Sunlight: 5.7 hours today</p>
+                            <p>Moisture: 30%</p>
+                            <span class="status">Needs Watering</span>
+                        </div>
+
+                        <div class="plant-card need-water">
+                            <h3>Plant #6 - Hibiscus</h3>
+                            <p>Sunlight: 6.5 hours today</p>
+                            <p>Moisture: 25%</p>
+                            <span class="status">Needs Watering</span>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <footer class="footer"></footer>
+    </div> 
+
+    <script>
+        const toggleBtn = document.getElementById("toggleSidebar");
+        const sidebar = document.getElementById("sidebar");
+
+        toggleBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("collapsed");
+        });
+    </script>
+</body>
+</html>
