@@ -20,6 +20,9 @@ body {
   font-family: "Inter", system-ui, -apple-system, Arial, sans-serif;      
   background: var(--green-bg);         
   color: var(--green-darker);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -84,21 +87,23 @@ nav button.active {
 
 
 main {
-  max-width: 1400px;   
+  width: 100%;
+  max-width: 1800px;   
   margin: 0 auto;
-  padding: 40px 48px;  
+  padding: 40px 12px;  
   display: flex;
-  gap: 32px;           
+  gap: 24px;           
   align-items: flex-start;
+  flex: 1;
 }
 
 
 
 .camera-section {
-  flex: 2.6;
+  flex: 3.5;
   background: #F9FBF8;
   border: 1px solid rgba(45, 91, 66, 0.35);
-  border-radius: 26px;
+  border-radius: 30px;
   overflow: hidden;
 }
 
@@ -137,9 +142,9 @@ main {
 
 
 .camera-box {
-  margin: 18px 22px 14px 22px;
-  height: 520px;                     
-  border-radius: 18px;
+  margin: 24px 22px 24px 22px;
+  height: 750px;                     
+  border-radius: 22px;
   overflow: hidden;                  
   border: 2px solid rgba(45, 91, 66, 0.25);
   background: #F7F7F7;
@@ -155,32 +160,6 @@ main {
 
 
 
-.pagination {
-  padding: 14px 22px 22px 22px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-.pagination button {
-  width: 38px;
-  height: 38px;
-  border: none;
-  border-radius: 999px;
-  background: #DDE6DD;
-  cursor: pointer;
-  font-weight: 600;
-  color: rgba(0,0,0,0.7);
-}
-
-.pagination button.active {
-  background: var(--green-dark);
-  color: white;
-}
-
-
-
-
 
 .alert-card {
   min-height: 140px;
@@ -189,8 +168,7 @@ main {
   border: 1px solid rgba(45, 91, 66, 0.35);
   border-radius: 18px;
   padding: 18px;
-}
-.alert-card {
+  
   display: flex;
   gap: 14px;
   align-items: flex-start;
