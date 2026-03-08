@@ -14,8 +14,8 @@
     <div class="logo">GardenPal</div>
 
     <nav>
-        <button class="navBtn active" data-page="live">Live Feed</button>
-        <button class="navBtn" data-page="plants">My Plants</button>
+        <button class="navBtn" data-page="live">Live Feed</button>
+        <button class="navBtn" data-page="myplants">My Plants</button>
         <button class="navBtn" data-page="weather">Weather</button>
     </nav>
 
@@ -65,6 +65,36 @@
 
 </main>
 <div class="footer-strip"></div>
-<script src="live-feed.js"></script>
+
+<script>
+  const routes = {
+    live: "live-feed.html",
+    myplants: "myplants.html",
+    weather: "weather.html"
+  };
+
+  document.querySelectorAll(".navBtn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const page = btn.dataset.page;
+      window.location.href = routes[page];
+    });
+  });
+
+  const pageMap = {
+    "live-feed": "live",
+    "myplants": "myplants",
+    "weather": "weather"
+  };
+
+  const currentFile = window.location.pathname.split("/").pop().replace(".html", "");
+  const currentPage = pageMap[currentFile] || currentFile;
+
+  document.querySelectorAll(".navBtn").forEach(btn => {
+    if (btn.dataset.page === currentPage) {
+      btn.classList.add("active");
+    }
+  });
+</script>
 </body>
 </html>
+
