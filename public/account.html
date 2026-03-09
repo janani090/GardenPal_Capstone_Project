@@ -16,6 +16,23 @@
 <link rel="stylesheet" href="account.css">
 
 </head>
+<!-- 
+<script>
+fetch("/api/account")
+  .then(res => res.json())
+  .then(user => {
+
+    document.getElementById("fullName").textContent = user.fullName;
+    document.getElementById("username").textContent = user.username;
+    document.getElementById("email").textContent = user.email;
+    document.getElementById("plants").textContent = user.plants;
+    document.getElementById("location").textContent = user.location;
+
+  })
+  .catch(() => {
+    window.location.href = "login.html";
+  });
+</script> -->
 
 <body>
 
@@ -44,29 +61,29 @@ cursor: pointer;">👤</button></div>
 
 <div class="profile-avatar">👤</div>
 
-<h2 class="username"></h2>
+<h2 class="username" id="fullname"></h2>
 
 
 <div class="profile-card">
 
 <div class="row">
-<span class="label">Username:</span>
-<span class="value"></span>
+<span class="label" style="text-align: center;">Username: admin</span>
+<span class="value" id="username"></span>
 </div>
 
 <div class="row">
-<span class="label">Email:</span>
-<span class="value"></span>
+<span class="label" style="text-align: center;">Email: admin@scarletmail.rutgers.edu</span>
+<span class="value" id="email"></span>
 </div>
 
 <div class="row">
-<span class="label">Plant Count:</span>
-<span class="value"> </span>
+<span class="label" style="text-align: center;">Plant Count: 6</span>
+<span class="value" id="plants"> </span>
 </div>
 
 <div class="row">
-<span class="label">Location:</span>
-<span class="value"></span>
+<span class="label" style="text-align: center;">Location: New Brunswick</span>
+<span class="value" id="location"></span>
 </div>
 
 <div class="links">

@@ -1,6 +1,10 @@
 const express = require("express");
 const session = require("express-session");
 
+const fs = require("fs");
+
+const data = JSON.parse(fs.readFileSync("users.json"));
+const users = data.users;
 
 const app = express();
 
@@ -19,15 +23,23 @@ app.use(session({
 app.post("/login", (req, res) => {
   const { username, password } = req.body;
 
+  const user = users.find(u => u.username === username);
 
-  if (username === "admin" && password === "1234") {
-    req.session.user = username;
-    res.redirect("/dashboard.html");
+  if (user && user.password === password) {
+    req.session.user = user;
+    res.redirect("/live-feed.html");
   } else {
-    res.send("Wrong credentials");
+    res.redirect("/login.html?error=1");
   }
 });
 
+app.get("/api/user-data", (req, res) => {
+  if (!req.session.user) {
+    return res.status(401).send("Not logged in");
+  }
+
+  res.json(req.session.user);
+});
 
 app.listen(3000, () => {
   console.log("Running on http://localhost:3000/login.html");

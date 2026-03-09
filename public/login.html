@@ -7,6 +7,17 @@
 <link rel="stylesheet" href="login.css">
 </head>
 
+<script>
+const params = new URLSearchParams(window.location.search);
+
+if (params.get("error")) {
+  alert("Wrong username or password");
+
+  document.querySelector("input[name='username']").value = "";
+  document.querySelector("input[name='password']").value = "";
+}
+</script>
+
 <body>
 
 <header>

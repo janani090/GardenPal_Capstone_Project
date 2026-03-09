@@ -1,6 +1,18 @@
-[
+{
+  "users": [
     {
-        "username":"admin",
-        "password": "1234"
-    }   
-]
+      "username": "admin",
+      "fullName": "Admin",
+      "password": "1234",
+      "plants": 6,
+      "location": "New Brunswick"
+    },
+    {
+      "username": "meg323",
+      "fullName": "Mary Grlic",
+      "password": "gardenpal123",
+      "plants": 3,
+      "location": "Piscataway"
+    }
+  ]
+}
