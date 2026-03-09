@@ -286,10 +286,11 @@ main {
   color: #2D5B42;}
 
 /* Today_img */
-.today-img{
+.today-img img{
+  width: 90px;
+  height: 90px;
   margin-top: -10px;
-  font-size: 70px; 
-  /*background: url(image.png);*/}
+}
 
 
 /* Today_Weather_Report_Box */
@@ -324,7 +325,7 @@ main {
 .line-border {
   width: 1px;
   height: 256px;
-  background-color: #ffffff;
+  background-color: #ffffff00;
 }
 
 
@@ -343,15 +344,15 @@ main {
 .day-card {
   box-sizing: border-box;
   
-  display: flex;
+  display: grid;
   flex-direction: column;
   align-items: center;    
-  justify-content: center; 
-  gap: 8px;    
+  justify-content: center;
+  justify-items: center; 
 
   width: 203px;
-  height: 211px;
-  padding: 20px;
+  height: 270px;
+  padding: 10px;
 
   background: #FFFFFF;
   border: 1px solid rgba(45, 91, 66, 0.35);
@@ -363,14 +364,12 @@ main {
 /* day title */
 .day-title{
   width: 220px;
-  height: 61px;
-  margin-top: 30px;
 
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 500;
   font-size: 32px;
-  line-height: 150%;
+  line-height: 10%;
   /* or 48px */
   text-align: center;
   letter-spacing: -0.005em;
@@ -397,50 +396,31 @@ main {
   margin: 0;}
 
 /* image day 1 */
-.day-1-img{
-  width: 92px;
-  height: 92px;
-  /*background: url(image.png);*/}
+.day-1-img img{
+  width: 95px;
+  height: 95px;
+}
 
 /* image day 2 */
-.day-2-img {
-  position: relative;
-  width: 92px;
-  height: 92px;
-  left: 64px;
-  top: 35px;
-
-  /*background: url(image.png);*/}
+.day-2-img img{
+  width: 95px;
+  height: 95px;
+}
 
 /* day-3-img */
-.day-3-img {
-  position: relative;
-  width: 92px;
-  height: 92px;
-  left: 64px;
-  top: 35px;
-
-  /*background: url(image.png);*/}
+.day-3-img img{
+  width: 95px;
+  height: 95px;}
 
   /* day-4-img */
-.day-4-img {
-  position: relative;
-  width: 92px;
-  height: 92px;
-  left: 64px;
-  top: 35px;
-
-  /*background: url(image.png);*/}
+.day-4-img img{
+  width: 95px;
+  height: 95px;}
 
 /* day-5-img */
-.day-5-img {
-  position: relative;
-  width: 92px;
-  height: 92px;
-  left: 64px;
-  top: 31px;
-
-  /*background: url(image.png);*/}
+.day-5-img img{
+  width: 95px;
+  height: 95px;}
 
 /*###############################################################################*/
 
