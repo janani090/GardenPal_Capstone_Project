@@ -5,14 +5,16 @@
       "fullName": "Admin",
       "password": "1234",
       "plants": 6,
-      "location": "New Brunswick"
+      "location": "New Brunswick",
+      "state": "New Jersey"
     },
     {
       "username": "meg323",
       "fullName": "Mary Grlic",
       "password": "gardenpal123",
       "plants": 3,
-      "location": "Piscataway"
+      "location": "Piscataway",
+      "state": "New Jersey"
     }
   ]
 }
