@@ -2,21 +2,21 @@
     {
         "plantId": 1,
         "moisture": 48,
-        "sunlight": 5.2,
+        "sunlight": 7,
         "temperature": 72,
         "timestamp": "2026-03-08T14:00:00Z"
     },
     {
         "plantId": 2,
         "moisture": 22,
-        "sunlight": 6.1,
+        "sunlight": 9,
         "temperature": 75,
         "timestamp": "2026-03-08T14:00:00Z"
     },
     {
         "plantId": 3,
         "moisture": 39,
-        "sunlight": 5.8,
+        "sunlight": 2.8,
         "temperature": 70,
         "timestamp": "2026-03-08T14:00:00Z"
     }
