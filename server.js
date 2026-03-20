@@ -1,7 +1,6 @@
-const express = require("express");
-const session = require("express-session");
-
-const fs = require("fs");
+import express from "express";
+import session from "express-session";
+import fs from "fs";
 
 const data = JSON.parse(fs.readFileSync("users.json"));
 const users = data.users;

@@ -3,7 +3,8 @@ dotenv.config();
 
 export async function analyzePlant(plant) {
     const prompt = `You are a horticulture expert. 
-    Analyze this plant's health.
+    Analyze this plant's health, specific to the species and information about that species' requirements for sunlights, watering, and humidity.
+    Assume that the sunlight levels are in hours, and measure DIRECT sunlight. 
 
     Plant type: ${plant.type}s
     Moisture: ${plant.moisture}%
