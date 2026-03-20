@@ -50,10 +50,10 @@
                     <div class="line-border"></div>
                     <div class="today-report-text">
                         <h3 style="color: #2D5B42;"><span id="today-day">Monday</span>'s Weather Report</h3>
-                        <p style="text-align: center; color: #2D5B42;"><strong>Precipitation:</strong> <span id = "today-precip">10</span>%</p>
-                        <p style="text-align: center; color: #2D5B42;"><strong>Humidity:</strong> <span id = "today-humid">76</span>%</p>
+                        <p style="text-align: center; color: #2D5B42;"><strong>Precipitation:</strong> <span id = "today-precip">0</span>%</p>
+                        <p style="text-align: center; color: #2D5B42;"><strong>Humidity:</strong> <span id = "today-humid">0</span>%</p>
                         <p style="text-align: center; color: #2D5B42;"><strong>Wind:</strong> <span id = "today-wind">0 mph</span></p>
-                        <p style="text-align: center; color: #2D5B42;"><span id = "today-report">Low Rain and High Wind Levels</span></p>
+                        <p style="text-align: center; color: #2D5B42;"><span id = "today-report">Chance Rain And Snow then Slight Chance Rain And Snow</span></p>
                     </div>
                 </div>
             </div>
@@ -62,7 +62,7 @@
                 <div class="precip-title-card">
                     <div class="precip-title">Precipitation Graph</div>
                 </div>
-                <div class="precip-img"></div>
+                <canvas class="precip-img" id="precipImg" width="380" height="170"></canvas>
             </div>
         </div>
     
@@ -99,16 +99,25 @@
             </div>
         </div>
     </div>
+
+    <div class="ai-message-card">
+        <div class="ai-message-title">
+            <div class="ai-message-icon"><img src="ai-message-icon.png"></div>
+            <h4>How This Might Affect Your Plants?</h4>
+        </div>
+        <div class="ai-message" id="ai-message">Water loss may be higher today due to dry, windy conditions. Check soil moisture levels more frequently.</div>
+    </div>
 </main>
+
 <div class="footer-strip"></div>
-<script src="weather.js"></script>
+<script type="module" src="weather.js"></script>
 
 <script>
     const routes = {
-        live: "live-feed.html",
-        myplants: "myplants.html",
+        live: "../live-feed.html",
+        myplants: "../myplants.html",
         weather: "weather.html",
-        profile: "account.html"
+        profile: "../account.html"
     };
     document.querySelectorAll(".navBtn").forEach(btn =>{
         btn.addEventListener("click", () =>{
@@ -127,5 +136,47 @@
         }
     });
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script type="module"> 
+    import {today_json} from './weather.js';
+    import {getHours, getPrecipPercent} from './precip-parser.js'; 
+    
+    // Parse today_json
+    let hours = getHours(today_json);
+    let precipPercent = getPrecipPercent(today_json);
+
+    // Create bar graph
+    let data = {
+        labels: hours, // hours
+        datasets: [{
+            data: precipPercent, // precipitation percentage
+            backgroundColor: 'rgba(70, 192, 192, 0.6)',
+            borderColor: 'rgba(150, 100, 255, 1)',
+            borderWidth: 1
+        }]
+    };
+
+    let options = {
+        scales: {
+            x: {grid: {display: false}},
+            y: {beginAtZero: true, grid:{display: false}, title: {display: true,text: 'Precipitation Percentage (%)'}},
+        },
+        plugins: {
+            legend: false,
+        }
+    };
+
+    let ctx = document.getElementById('precipImg').getContext('2d');
+
+    let precipImg = new Chart(ctx, {
+        type: 'bar',
+        data: data,
+        options: options
+    });
+</script>
+
+
 </body>
 </html>

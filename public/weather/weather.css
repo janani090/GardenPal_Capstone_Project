@@ -96,7 +96,7 @@ main {
     isolation: isolate;
 
     width: 497px;
-    height: 256px;
+    height: 280px;
 
     background: #FFFFFF;
     border: 1px solid rgba(45, 91, 66, 0.35);
@@ -114,6 +114,7 @@ main {
     left: 32px;
     top: 23px;
     margin-top: -10px;
+    margin-bottom: 10px;
 
     background: rgba(45, 91, 66, 0.8);
     border: 1px solid var(--green-dark);
@@ -144,15 +145,12 @@ main {
     color: #FFFFFF;
 }
 
-/* Precipitation Image */
+/* Precipitation Graph */
 .precp-img{
     position: relative;
-    width: 456px;
-    height: 150px;
-    left: 21px;
-    top: 93px;
+    width: 95px;
+    height: 95px;
 
-    /*background: url(nexus2cee_weather-wind-precipitation-3526578612.png);*/
     background-size: cover;
     background-position: center;
 }
@@ -166,6 +164,7 @@ main {
   flex: 2.6;
   flex-direction: column;
   gap: 24px;
+  margin: 0 auto;
 
   width: 1160px;
 
@@ -231,7 +230,7 @@ main {
   isolation: isolate;
 
   width: 654px;
-  height: 256px;
+  height: 280px;
 
   background: #FFFFFF;
   border: 1px solid rgba(45, 91, 66, 0.35);
@@ -349,6 +348,7 @@ main {
   align-items: center;    
   justify-content: center;
   justify-items: center; 
+  flex: 2.6;
 
   width: 203px;
   height: 270px;
@@ -424,9 +424,69 @@ main {
 
 /*###############################################################################*/
 
+/* AI Message Card */
+.ai-message-card {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  padding-bottom: 50px;
+  gap: 10px;
+  flex: 2.6;
+
+  width: 710px;
+  height: 320px;
+
+  margin: 0 auto;   /* centers horizontally */
+
+  background: #FFFFFF;
+  border: 1px solid rgba(45, 91, 66, 0.35);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.02), 0px 6px 12px rgba(0, 0, 0, 0.03);
+  border-radius: 30px;
+}
+
+/* Ai Message Title */
+.ai-message-title{
+  width:100%;
+  display: flex;        
+  flex-direction: row;
+  gap: 10px;
+  margin-left: 10px;
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-size: 18px;
+  color: #2D5B42;
+}
+
+/* Ai Message Icon */
+
+.ai-message-icon img{
+  width: 50px;
+  height: 60px;
+  margin-left: 0px;
+}
+
+/* AI Message */
+.ai-message {
+  width: 630px;
+  height: 58px;
+  margin-left: 10px;
+
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 145%;
+
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.005em;
+
+  color: rgba(1, 27, 13, 0.823529);}
+
+
 /* Footer Strip */
 .footer-strip {
   height: 140px;
   background: var(--green-dark);
-  margin-top: 110px;
+  margin-top: 10px;
 }
