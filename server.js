@@ -9,6 +9,7 @@ const app = express();
 
 
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(express.static("public"));
 
 
@@ -38,6 +39,24 @@ app.get("/api/user-data", (req, res) => {
   }
 
   res.json(req.session.user);
+});
+
+app.get("/api/sensor-data", (req, res) => {
+  try {
+    const sensorData = JSON.parse(fs.readFileSync("testing_data.json", "utf8"));
+    res.json(sensorData);
+  } catch (error) {
+    res.status(500).json({ error: "Sensor data not available" });
+  }
+});
+
+app.post("/api/update-sensor-data", (req, res) => {
+  try {
+    fs.writeFileSync("testing_data.json", JSON.stringify(req.body, null, 2));
+    res.json({ message: "Sensor data updated successfully"});
+  } catch (error) {
+    res.status(500).json({ error: "Failed to update sensor data"});
+  }
 });
 
 app.listen(3000, () => {

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>GardenPal Dashboard</title>
     <link rel="stylesheet" href="myplants.css">
+    <script src="myplants.js"></script>
 </head>
 
 <body>
@@ -59,7 +60,7 @@
 
                 <div class="sidebar-card">
                     <h2>Last Sensor Update</h2>
-                    <p class="last-updated">Last updated 6 minutes ago</p>
+                    <p id="last-update">Last updates: --</p>
                 </div>
 
             </aside>
@@ -80,8 +81,8 @@
 
                         <div class="plant-card healthy">
                             <h3>Plant #1 - Hydrangea</h3>
-                            <p>Sunlight: 5.5 hours today</p>
-                            <p>Moisture: 50%</p>
+                            <p id="plant1-sunlight">Sunlight: --</p>
+                            <p id="plant1-moisture">Moisture --</p>
                             <span class="status">Healthy</span>
                         </div>
 
