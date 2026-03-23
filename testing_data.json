@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-03-13 12:00:00",
-  "soil_moisture": 450,
-  "soil_percentage": 55,
-  "light_lux": 620,
-  "temperature_F": 72,
-  "humidity_percent": 45
+  "timestamp": "2026-03-22 18:16:46",
+  "soil_moisture": 0,
+  "soil_percentage": 100,
+  "light_lux": 202.08333333333334,
+  "temperature_F": 71.78,
+  "humidity_%": 44.7
 }
