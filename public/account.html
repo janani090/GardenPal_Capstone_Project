@@ -16,27 +16,7 @@
 <link rel="stylesheet" href="account.css">
 
 </head>
-<!-- 
-<script>
-fetch("/api/account")
-  .then(res => res.json())
-  .then(user => {
-
-    document.getElementById("fullName").textContent = user.fullName;
-    document.getElementById("username").textContent = user.username;
-    document.getElementById("email").textContent = user.email;
-    document.getElementById("plants").textContent = user.plants;
-    document.getElementById("location").textContent = user.location;
-
-  })
-  .catch(() => {
-    window.location.href = "login.html";
-  });
-</script> -->
-
 <body>
-
-
 <header>
     
 <div class="logo">GardenPal</div>
@@ -67,28 +47,28 @@ cursor: pointer;">👤</button></div>
 <div class="profile-card">
 
 <div class="row">
-<span class="label" style="text-align: center;">Username: admin</span>
-<span class="value" id="username"></span>
+  <span class="label">Username: admin</span>
+  <span class="value" id="username"></span>
 </div>
 
 <div class="row">
-<span class="label" style="text-align: center;">Email: admin@scarletmail.rutgers.edu</span>
-<span class="value" id="email"></span>
+  <span class="label">Email: admin@scarletmail.rutgers.edu</span>
+  <span class="value" id="email"></span>
 </div>
 
 <div class="row">
-<span class="label" style="text-align: center;">Plant Count: 6</span>
-<span class="value" id="plants"> </span>
+  <span class="label" id="plant-count">Plant Count: --</span>
+  <span class="value" id="plants"></span>
 </div>
 
 <div class="row">
-<span class="label" style="text-align: center;">Location: New Brunswick, New Jersey</span>
-<span class="value" id="location"></span>
+  <span class="label">Location: New Brunswick, New Jersey</span>
+  <span class="value" id="location"></span>
 </div>
 
 <div class="links">
-<a href="#">Change Password</a>
-<a href="#">Change Email</a>
+  <a href="#">Change Password</a>
+  <a href="#">Change Email</a>
 </div>
 
 </div>
@@ -122,4 +102,23 @@ cursor: pointer;">👤</button></div>
         }
     });
 </script>
+
+<script>
+async function loadPlantCount() {
+  const response = await fetch("/api/sensor-data");
+  const data = await response.json();
+
+  const plantCount = Object.values(data.plants).filter(readings => {
+    const latest = readings[readings.length - 1];
+    return latest.timestamp !== "Manual default";
+  }).length;
+
+  document.getElementById("plant-count").textContent =
+    `Plant Count: ${plantCount}`;
+}
+
+loadPlantCount();
+setInterval(loadPlantCount, 5000);
+</script>
+
 </html>

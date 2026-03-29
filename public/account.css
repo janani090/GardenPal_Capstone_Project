@@ -64,6 +64,19 @@ nav button:hover{
 background:rgba(255,255,255,0.6);
 }
 
+.row {
+  display: flex;
+  flex-direction: column;   /* stack label + value */
+  align-items: center;      /* horizontally center */
+  text-align: center;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
 
 /* PROFILE ICON */
 
