@@ -59,6 +59,10 @@ app.post("/api/update-sensor-data", (req, res) => {
   }
 });
 
+app.get("/", (req, res) => {
+  res.redirect("/login.html");
+});
+
 app.listen(3000, () => {
   console.log("Running on http://localhost:3000/login.html");
 });
