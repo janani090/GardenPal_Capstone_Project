@@ -7,6 +7,10 @@ import busio
 import adafruit_bh1750
 import os
 import time
+import requests
+
+# update for user 
+BACKEND_URL = "http://172.20.10.4:3000/api/update-sensor-data"
 
 # light sensor
 i2c = busio.I2C(board.SCL, board.SDA)
@@ -17,7 +21,7 @@ spi = spidev.SpiDev()
 spi.open(0,0) # bus 0, device 0
 spi.max_speed_hz = 1350000
 
-# DHT/temp sensor
+# dht/temp sensor
 dht_device1 = adafruit_dht.DHT22(board.D4, use_pulseio=False)
 dht_device2 = adafruit_dht.DHT22(board.D17, use_pulseio=False)
 
@@ -49,8 +53,8 @@ try:
     hum2 = dht_device2.humidity
 
     # Load existing JSON if it exists
-    if os.path.exists(json_file_name):
-        with open(json_file_name, "r") as file:
+    if os.path.exists("testing_data.json"):
+        with open("testing_data.json", "r") as file:
             data = json.load(file)
     else:
         # If file doesn't exist, create base structure
@@ -91,43 +95,16 @@ try:
     }
 
     # Save to JSON
-    with open(json_file_name, "w") as file:
+    with open("testing_data.json", "w") as file:
         json.dump(data, file, indent=4)
 
     print("Updated plant1 and plant2 successfully!")
+
+    response = requests.post(BACKEND_URL, json=data, timeout=5)
+    print("POST status:", response.status_code)
 
 except RuntimeError as e:
     print(f"Error: {e}")
 
 finally:
     spi.close()
-
-# initial code for 1 sensor (reference)
-
-# try:
-#     moisture_value = read_channel(0) #channel 0 on ADC is connected to moisture sensor
-#     moisture_percent = (1023 - moisture_value) / 1023 * 100
-
-#     lux_value = sensor.lux
-
-#     t = (dht_device.temperature * 1.8) + 32
-#     h = dht_device.humidity
-
-#     # JSON file creation
-#     data = {
-#         "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-#         "soil_moisture": moisture_value,
-#         "soil_percentage": moisture_percent,
-#         "light_lux": lux_value,
-#         "temperature_F": t,
-#         "humidity_%": h,
-#     }
-
-#     with open("testing_data.json", 'w') as json_file:
-#         json.dump(data, json_file, indent=4)
-
-# except RuntimeError as e:
-#     print(f"Error: {e}")
-
-# finally:
-#     spi.close()
