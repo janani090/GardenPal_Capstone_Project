@@ -1,4 +1,4 @@
-const PI_CAMERA_URL = "http://172.20.10.2:8000/stream.mjpg";
+const PI_CAMERA_URL = "http://172.20.10.7:8000/stream.mjpg";
 
 const feedImage = document.getElementById("feedImage");
 const cameraStatus = document.getElementById("cameraStatus");

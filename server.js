@@ -1,12 +1,15 @@
 import express from "express";
 import session from "express-session";
 import fs from "fs";
+import dotenv from "dotenv";
+import { analyzePlant } from "./ai-test/analyzePlant.js";
+
+dotenv.config();
 
 const data = JSON.parse(fs.readFileSync("users.json"));
 const users = data.users;
 
 const app = express();
-
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -67,4 +70,4 @@ app.listen(3000, () => {
   console.log("Running on http://localhost:3000/login.html");
 });
 
-
+console.log("GROQ KEY:", process.env.GROQ_API_KEY);

@@ -44,23 +44,23 @@
                 <div class="sidebar-card">
                     <h2>Overall Plant Health</h2>
                     <ul class="health-summary">
-                        <li class="healthy">3 Healthy</li>
-                        <li class="need-water">2 Need Water</li>
-                        <li class="at-risk">1 At Risk</li>
+                        <li class="healthy">0 Healthy</li>
+                        <li class="need-water">0 Need Water</li>
+                        <li class="at-risk">0 At Risk</li>
                     </ul>
                 </div>
 
                 <div class="sidebar-card">
                     <h2>Actions Needed</h2>
                     <ul class="actions">
-                        <li>Water Plant #5 and Plant #6 today</li>
-                        <li>Move Plant #2 to shadier area</li>
+                        <li>Move Plant #1 and Plant #2 to a sunnier area</li>
+                        <li>Water Plant #2</li>
                     </ul>
                 </div>
 
                 <div class="sidebar-card">
                     <h2>Last Sensor Update</h2>
-                    <p id="last-update">Last updates: --</p>
+                    <p id="last-update">Last update: --</p>
                 </div>
 
             </aside>
@@ -74,60 +74,16 @@
                             <h1>My Plants</h1>
                             <p class="plants-caption">Live insights from your monitored plants</p>
                         </div>
-                        <button class="add-btn">+ Add Plant</button>
+                        <button class="add-btn" id="addPlantBtn">+ Add Plant</button>
                     </div>
 
-                    <div class="plant-grid">
+                    <div class="plant-grid" id="plant-grid"></div>
 
-                        <div class="plant-card healthy">
-                            <h3>Plant #1 - Hydrangea</h3>
-                            <p id="plant1-sunlight">Sunlight: --</p>
-                            <p id="plant1-moisture">Moisture: --</p>
-                            <span class="status">Healthy</span>
-                        </div>
-
-                        <div class="plant-card at-risk">
-                            <h3>Plant #2 - Dandelion</h3>
-                            <p id="plant2-sunlight">Sunlight: --</p>
-                            <p id="plant2-moisture">Moisture: --</p>
-                            <span class="status">At Risk</span>
-                        </div>
-
-                        <div class="plant-card healthy">
-                            <h3>Plant #3 - Default Plant</h3>
-                            <p id="plant3-sunlight">Sunlight: --</p>
-                            <p id="plant3-moisture">Moisture: --</p>
-                            <span class="status">Healthy</span>
-                        </div>
-
-                        <div class="plant-card healthy">
-                            <h3>Plant #4 - Default Plant</h3>
-                            <p id="plant4-sunlight">Sunlight: --</p>
-                            <p id="plant4-moisture">Moisture: --</p>
-                            <span class="status">Healthy</span>
-                        </div>
-
-                        <div class="plant-card need-water">
-                            <h3>Plant #5 - Default Plant</h3>
-                            <p id="plant5-sunlight">Sunlight: --</p>
-                            <p id="plant5-moisture">Moisture: --</p>
-                            <span class="status">Needs Watering</span>
-                        </div>
-
-                        <div class="plant-card need-water">
-                            <h3>Plant #6 - Default Plant</h3>
-                            <p id="plant6-sunlight">Sunlight: --</p>
-                            <p id="plant6-moisture">Moisture: --</p>
-                            <span class="status">Needs Watering</span>
-                        </div>
-                    </div>
                 </div>
             </main>
         </div>
 
         <footer class="footer"></footer>
-    </div> 
-
     <script>
         const toggleBtn = document.getElementById("toggleSidebar");
         const sidebar = document.getElementById("sidebar");

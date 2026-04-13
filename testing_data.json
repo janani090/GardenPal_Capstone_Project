@@ -1,18 +1,18 @@
 {
   "plants": {
     "plant1": {
-      "timestamp": "2026-04-08 17:56:35",
-      "soil_percentage": 100,
-      "light_lux": 330.83333333333337,
-      "temperature_F": 77.18,
-      "humidity_%": 10
+      "timestamp": "2026-04-13 17:50:20",
+      "soil_percentage": 63.147605083088955,
+      "light_lux": 216.25,
+      "temperature_F": 77.72,
+      "humidity_%": 47
     },
     "plant2": {
-      "timestamp": "2026-04-08 17:56:35",
-      "soil_percentage": 1.3685239491691104,
-      "light_lux": 330.83333333333337,
-      "temperature_F": 77.36,
-      "humidity_%": 10.1
+      "timestamp": "2026-04-13 17:50:20",
+      "soil_percentage": 13.48973607038123,
+      "light_lux": 216.25,
+      "temperature_F": 76.46000000000001,
+      "humidity_%": 46.9
     },
     "plant3": {
       "timestamp": "Manual default",

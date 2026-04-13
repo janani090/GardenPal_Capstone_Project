@@ -3,8 +3,8 @@
     {
       "username": "admin",
       "fullName": "Admin",
-      "password": "1234",
-      "plants": 6,
+      "password": "GardenPal1234",
+      "plants": 3,
       "location": "New Brunswick",
       "state": "New Jersey"
     },
