@@ -270,6 +270,19 @@ nav button.active {
     color: #C62828;
 }
 
+.delete-btn {
+  margin-top: 10px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 8px;
+  background: #c5c6d0;
+  color: white;
+  cursor: pointer;
+}
+.delete-btn:hover {
+  background: #cc0000;
+}
+
 .footer {
     height: 160px;
     width: 100%;

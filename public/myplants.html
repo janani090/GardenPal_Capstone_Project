@@ -44,23 +44,20 @@
                 <div class="sidebar-card">
                     <h2>Overall Plant Health</h2>
                     <ul class="health-summary">
-                        <li class="healthy">3 Healthy</li>
-                        <li class="need-water">2 Need Water</li>
-                        <li class="at-risk">1 At Risk</li>
+                        <li class="healthy">0 Healthy</li>
+                        <li class="need-water">0 Need Water</li>
+                        <li class="at-risk">0 At Risk</li>
                     </ul>
                 </div>
 
                 <div class="sidebar-card">
                     <h2>Actions Needed</h2>
-                    <ul class="actions">
-                        <li>Water Plant #5 and Plant #6 today</li>
-                        <li>Move Plant #2 to shadier area</li>
-                    </ul>
+                    <ul class="actions" id = "actions-list"></ul>
                 </div>
 
                 <div class="sidebar-card">
                     <h2>Last Sensor Update</h2>
-                    <p id="last-update">Last updates: --</p>
+                    <p id="last-update">Last update: --</p>
                 </div>
 
             </aside>
@@ -74,60 +71,16 @@
                             <h1>My Plants</h1>
                             <p class="plants-caption">Live insights from your monitored plants</p>
                         </div>
-                        <button class="add-btn">+ Add Plant</button>
+                        <button class="add-btn" id="addPlantBtn">+ Add Plant</button>
                     </div>
 
-                    <div class="plant-grid">
+                    <div class="plant-grid" id="plant-grid"></div>
 
-                        <div class="plant-card healthy">
-                            <h3>Plant #1 - Hydrangea</h3>
-                            <p id="plant1-sunlight">Sunlight: --</p>
-                            <p id="plant1-moisture">Moisture --</p>
-                            <span class="status">Healthy</span>
-                        </div>
-
-                        <div class="plant-card at-risk">
-                            <h3>Plant #2 - Dandelion</h3>
-                            <p>Sunlight: 6.2 hours today</p>
-                            <p>Moisture: 20%</p>
-                            <span class="status">At Risk</span>
-                        </div>
-
-                        <div class="plant-card healthy">
-                            <h3>Plant #3 - Zinnia</h3>
-                            <p>Sunlight: 5.6 hours today</p>
-                            <p>Moisture: 40%</p>
-                            <span class="status">Healthy</span>
-                        </div>
-
-                        <div class="plant-card healthy">
-                            <h3>Plant #4 - Orchid</h3>
-                            <p>Sunlight: 4.5 hours today</p>
-                            <p>Moisture: 90%</p>
-                            <span class="status">Healthy</span>
-                        </div>
-
-                        <div class="plant-card need-water">
-                            <h3>Plant #5 - Tulip</h3>
-                            <p>Sunlight: 5.7 hours today</p>
-                            <p>Moisture: 30%</p>
-                            <span class="status">Needs Watering</span>
-                        </div>
-
-                        <div class="plant-card need-water">
-                            <h3>Plant #6 - Hibiscus</h3>
-                            <p>Sunlight: 6.5 hours today</p>
-                            <p>Moisture: 25%</p>
-                            <span class="status">Needs Watering</span>
-                        </div>
-                    </div>
                 </div>
             </main>
         </div>
 
         <footer class="footer"></footer>
-    </div> 
-
     <script>
         const toggleBtn = document.getElementById("toggleSidebar");
         const sidebar = document.getElementById("sidebar");

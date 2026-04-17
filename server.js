@@ -1,12 +1,15 @@
 import express from "express";
 import session from "express-session";
 import fs from "fs";
+import dotenv from "dotenv";
+import {analyzePlant} from "./ai-test/analyzePlant.js";
+
+dotenv.config();
 
 const data = JSON.parse(fs.readFileSync("users.json"));
 const users = data.users;
 
 const app = express();
-
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -59,8 +62,30 @@ app.post("/api/update-sensor-data", (req, res) => {
   }
 });
 
+app.use(express.json());
+
+app.post("/api/analyze-plant", async (req, res) => {
+  try {
+    const plantData = req.body;
+
+    const result = await analyzePlant(plantData);
+
+    res.json(result);
+  } catch (err) {
+    console.error("Analyze plant route error:", err);
+    res.status(500).json({
+      status: "unknown",
+      reason: "Server error",
+      action: "Try again later",
+      confidence: 0
+    });
+  }
+});
+
+app.get("/", (req, res) => {
+  res.redirect("/login.html");
+});
+
 app.listen(3000, () => {
   console.log("Running on http://localhost:3000/login.html");
 });
-
-

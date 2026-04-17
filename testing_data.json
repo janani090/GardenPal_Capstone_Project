@@ -1,8 +1,23 @@
 {
-  "timestamp": "2026-03-13 12:00:00",
-  "soil_moisture": 450,
-  "soil_percentage": 55,
-  "light_lux": 620,
-  "temperature_F": 72,
-  "humidity_percent": 45
+  "plants": {
+    "plant1": {
+      "timestamp": "2026-04-13 17:50:20",
+      "soil_percentage": 63.147605083088955,
+      "light_lux": 216.25,
+      "temperature_F": 77.72,
+      "humidity_%": 47
+    },
+    "plant2": {
+      "timestamp": "2026-04-13 17:50:20",
+      "soil_percentage": 13.48973607038123,
+      "light_lux": 216.25,
+      "temperature_F": 76.46000000000001,
+      "humidity_%": 46.9
+    }
+  },
+
+  "plantsList": [
+    { "id": "plant1", "name": "Hydrangea", "sensorKey": "plant1" },
+    { "id": "plant2", "name": "Dandelion", "sensorKey": "plant2" }
+  ]
 }

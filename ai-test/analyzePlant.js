@@ -1,4 +1,5 @@
 import dotenv from "dotenv";
+import fetch from "node-fetch";
 dotenv.config();
 
 export async function analyzePlant(plant) {
@@ -6,7 +7,7 @@ export async function analyzePlant(plant) {
     Analyze this plant's health, specific to the species and information about that species' requirements for sunlights, watering, and humidity.
     Assume that the sunlight levels are in hours, and measure DIRECT sunlight. 
 
-    Plant type: ${plant.type}s
+    Plant type: ${plant.type}
     Moisture: ${plant.moisture}%
     Sunlight: ${plant.sunlight} hours
     Temperature: ${plant.temperature}degrees F
@@ -32,7 +33,7 @@ export async function analyzePlant(plant) {
         body: JSON.stringify({
             model: "llama-3.1-8b-instant",
             messages: [
-                { role: "system", content: "You are a plant expert."},
+                { role: "system", content: "You are a plant expert. Respond only with a valid JSON."},
                 { role: "user", content: prompt }
             ],
             temperature: 0.2        
