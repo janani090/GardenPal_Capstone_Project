@@ -15,13 +15,11 @@ function luxToCategory(lux) {
 // Prevent spamming AI calls
 let lastTimestamps = {};
 
-// Default plant list (only first 2 are real sensors)
 const defaultPlants = [
   { id: "plant1", name: "Hydrangea", sensorKey: "plant1" },
   { id: "plant2", name: "Dandelion", sensorKey: "plant2" }
 ];
 
-// Load saved plants from localStorage (or use defaults)
 function loadPlantList() {
   const saved = localStorage.getItem("plants");
 
@@ -120,9 +118,26 @@ function createPlantCard(plant) {
     <p id="${plant.id}-sunlight">Sunlight: --</p>
     <p id="${plant.id}-moisture">Moisture: --</p>
     <span class="status">Loading...</span>
+    <button class="delete-btn" data-delete-id="${plant.id}">Delete</button>
   `;
 
   return card;
+}
+
+function setupDeleteButtons() {
+  document.querySelectorAll(".delete-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const plantId = btn.dataset.deleteId;
+
+      let plants = loadPlantList();
+      plants = plants.filter(p => p.id !== plantId);
+
+      savePlantList(plants);
+
+      renderPlants();
+      loadSensorData();
+    });
+  });
 }
 
 function updatePlantCount() {
@@ -145,7 +160,7 @@ function renderPlants() {
     const card = createPlantCard(plant);
     grid.appendChild(card);
   });
-
+  setupDeleteButtons();
   updatePlantCount();
   updateSidebarCounts();
 }
@@ -246,6 +261,40 @@ async function loadSensorData() {
   } catch (error) {
     console.error("Failed to load sensor data:", error);
   }
+}
+
+function setupAddPlantButton() {
+  const btn = document.getElementById("addPlantBtn");
+
+  btn.addEventListener("click", async () => {
+    const plantName = prompt("Enter your plant name:");
+    if (!plantName || plantName.trim() === "") return;
+
+    try {
+      const response = await fetch("/api/plants/add", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ name: plantName.trim() })
+      });
+
+      const result = await response.json();
+
+      if (!result.success) {
+        alert("Failed to add plant.");
+        return;
+      }
+
+      // re-render plants (you should now fetch them)
+      renderPlants();
+      loadSensorData();
+
+    } catch (err) {
+      console.error("Error adding plant:", err);
+      alert("Server error.");
+    }
+  });
 }
 
 function setupAddPlantButton() {
