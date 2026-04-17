@@ -1,3 +1,5 @@
+let plantActions = {};
+
 function luxToPercent(lux) {
   const maxLux = 10000;
   return Math.min(100, Math.round((lux / maxLux) * 100));
@@ -81,8 +83,8 @@ function updatePlantCardStatus(cardElement, aiStatus) {
     cardElement.classList.add("at-risk");
     if (statusSpan) statusSpan.textContent = "At Risk";
   } else {
-    cardElement.classList.add("at-risk");
-    if (statusSpan) statusSpan.textContent = "At Risk";
+    cardElement.classList.add("no-data");
+    if (statusSpan) statusSpan.textContent = "Error Getting Data";
   }
 }
 
@@ -110,7 +112,7 @@ function updateSidebarCounts() {
 
 function createPlantCard(plant) {
   const card = document.createElement("div");
-  card.classList.add("plant-card", "at-risk");
+  card.classList.add("plant-card", "no-data");
   card.dataset.plantId = plant.id;
 
   card.innerHTML = `
@@ -146,6 +148,32 @@ function renderPlants() {
 
   updatePlantCount();
   updateSidebarCounts();
+}
+
+function updateActionsList(plants) {
+  const actionsList = document.getElementById("actions-list");
+  if (!actionsList) return;
+
+  actionsList.innerHTML = "";
+
+  let actions = [];
+
+  plants.forEach(plant => {
+    if (plantActions[plant.id]) {
+      actions.push(`${plant.name}: ${plantActions[plant.id]}`);
+    }
+  });
+
+  if (actions.length === 0) {
+    actionsList.innerHTML = "<li>No actions needed right now.</li>";
+    return;
+  }
+
+  actions.forEach(actionText => {
+    const li = document.createElement("li");
+    li.textContent = actionText;
+    actionsList.appendChild(li);
+  });
 }
 
 async function loadSensorData() {
@@ -206,10 +234,14 @@ async function loadSensorData() {
 
         const ai = await analyzePlantWithAI(sensorData, plant.name);
         updatePlantCardStatus(cardEl, ai.status);
+        if (ai.action) {
+          plantActions[plant.id] = ai.action;
+        }
       }
     }
 
     updateSidebarCounts();
+    updateActionsList(plants);
 
   } catch (error) {
     console.error("Failed to load sensor data:", error);
