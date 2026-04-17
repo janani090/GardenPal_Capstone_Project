@@ -12,11 +12,23 @@ feedImage.onload = () => {
 feedImage.onerror = () => {
   cameraStatus.textContent = "Unable to connect to camera feed";
 };
+// hold data to use it later for notifs
+let lastPredatorTimestamp = null;
+let cachedAIAlerts = [];
+let animalAlerts = [];
 
+// icons for status alerts
 function getAlertIcon(status) {
   if (status === "needs-water") return "💧";
   if (status === "at-risk") return "⚠️";
   if (status === "healthy") return "🌱";
+  return "❓";
+}
+// icons for predator alerts
+function getPredatorIcon(type) {
+  if (type === "rabbit") return "🐇";
+  if (type === "deer") return "🦌";
+  if (type === "squirrel") return "🐿️";
   return "❓";
 }
 
@@ -77,7 +89,50 @@ async function analyzePlantWithAI(sensorData, plantType) {
   }
 }
 
-async function loadLiveAlerts() {
+async function loadPredatorAlerts() {
+  try {
+    const response = await fetch("/api/sensor-data");
+    const data = await response.json();
+
+    const plants = JSON.parse(localStorage.getItem("plants")) || [];
+
+    if (data.predator && data.predator.predatorTrue === true) {
+      const predatorType = data.predator.type || "Unknown Predator";
+      const predatorTimestamp = data.predator.timestamp || "Unknown time";
+      const plantKey = data.predator.plantKey;
+
+      let plantName = "Unknown Plant";
+      if (plantKey) {
+        const match = plants.find(p => p.sensorKey === plantKey);
+        if (match) plantName = match.name;
+      }
+
+      const alreadyExists = animalAlerts.some(alert =>
+        alert.timestamp === predatorTimestamp &&
+        alert.type === predatorType &&
+        alert.plantName === plantName
+      );
+
+      if (!alreadyExists) {
+        animalAlerts.unshift({
+          icon: getPredatorIcon(predatorType),
+          title: `Predator Detected`,
+          message: `A ${predatorType} was detected near ${plantName}.`,
+          timestamp: predatorTimestamp,
+          type: predatorType,
+          plantName: plantName
+        });
+      }
+    }
+
+    renderAlerts([...animalAlerts, ...cachedAIAlerts]);
+
+  } catch (err) {
+    console.error("Failed to load predator alerts:", err);
+  }
+}
+
+async function loadPlantAlerts() {
   try {
     const response = await fetch("/api/sensor-data");
     const data = await response.json();
@@ -86,34 +141,41 @@ async function loadLiveAlerts() {
 
     const plants = JSON.parse(localStorage.getItem("plants")) || [];
 
-    let alerts = [];
-
-    for (let plant of plants) {
-      if (!plant.sensorKey) continue;
+    const aiPromises = plants.map(async (plant) => {
+      if (!plant.sensorKey) return null;
 
       const sensorData = data.plants[plant.sensorKey];
-      if (!sensorData) continue;
+      if (!sensorData) return null;
 
       const ai = await analyzePlantWithAI(sensorData, plant.name);
-      if (!ai) continue;
+      if (!ai) return null;
 
       if (ai.status !== "healthy") {
-        alerts.push({
+        return {
           icon: getAlertIcon(ai.status),
           title: `${getAlertTitle(ai.status)} (${plant.name})`,
-          message: ai.action || ai.reason || "No recommended action available."
-        });
+          message: ai.action || ai.reason || "No recommended action available.",
+          plantName: plant.name
+        };
       }
-    }
 
-    renderAlerts(alerts);
+      return null;
+    });
+
+    const aiAlerts = (await Promise.all(aiPromises)).filter(a => a !== null);
+    cachedAIAlerts = aiAlerts;
+    renderAlerts([...animalAlerts, ...cachedAIAlerts]);
 
   } catch (err) {
-    console.error("Failed to load live alerts:", err);
+    console.error("Failed to load AI alerts:", err);
   }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  loadLiveAlerts();
-  setInterval(loadLiveAlerts, 5000);
+  loadPredatorAlerts();
+  loadPlantAlerts();
+
+  setInterval(loadPredatorAlerts, 5000);
+  setInterval(loadPlantAlerts, 60000);
+
 });

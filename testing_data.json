@@ -16,8 +16,11 @@
     }
   },
 
-  "plantsList": [
-    { "id": "plant1", "name": "Hydrangea", "sensorKey": "plant1" },
-    { "id": "plant2", "name": "Dandelion", "sensorKey": "plant2" }
-  ]
+  "predator": {
+    "predatorTrue": true,
+    "type": "rabbit",
+    "timestamp": "2026-04-17 14:45:00",
+    "plantKey": "plant2"
+  }
+
 }
