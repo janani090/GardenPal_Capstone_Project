@@ -81,58 +81,6 @@ app.post("/api/analyze-plant", async (req, res) => {
     });
   }
 });
-const PORT = 3000;
-
-app.use(express.json());
-app.use(express.static("public"));
-
-// path to your JSON file OUTSIDE public
-const DATA_FILE = "testing_data.json";
-
-// GET plant list
-app.get("/api/plants", (req, res) => {
-  try {
-    const fileData = fs.readFileSync(DATA_FILE, "utf-8");
-    const json = JSON.parse(fileData);
-
-    res.json(json.plantsList || []);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Failed to load plants" });
-  }
-});
-
-// ADD plant
-app.post("/api/plants/add", (req, res) => {
-  try {
-    const { name } = req.body;
-
-    if (!name || name.trim() === "") {
-      return res.status(400).json({ error: "Plant name required" });
-    }
-
-    const fileData = fs.readFileSync(DATA_FILE, "utf-8");
-    const json = JSON.parse(fileData);
-
-    if (!json.plantsList) json.plantsList = [];
-
-    const newPlant = {
-      id: `plant${json.plantsList.length + 1}`,
-      name: name.trim(),
-      sensorKey: null
-    };
-
-    json.plantsList.push(newPlant);
-
-    fs.writeFileSync(DATA_FILE, JSON.stringify(json, null, 2));
-
-    res.json({ success: true, plant: newPlant });
-
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Failed to add plant" });
-  }
-});
 
 app.get("/", (req, res) => {
   res.redirect("/login.html");
