@@ -76,7 +76,7 @@ async function loadWeather(){
         document.getElementById(`day-${i}-report`).innerHTML = iconDescp;
     }
     
-    const response = await fetch("/api/ai-weather", {
+    const response = await fetch("http://localhost:3000/ai-weather", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -84,7 +84,8 @@ async function loadWeather(){
         body: JSON.stringify(today_json)
     });
     const ai_response = await response.json();
-    document.getElementById("ai-message").innerHTML = ai_response.ai_message;
+    const parsed = JSON.parse(ai_response.ai_response);
+    document.getElementById("ai-message").innerHTML = parsed.ai_message;
 }
 
 // load weather data into website

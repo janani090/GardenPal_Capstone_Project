@@ -97,62 +97,6 @@ app.post("/api/analyze-plant", async (req, res) => {
   }
 });
 
-app.post("/api/ai-weather", async (req, res) => {
-  const today_json = req.body;
-
-  if (!today_json || !today_json[0]) {
-    return res.status(400).json({ error: "Invalid input format" });
-  }
-
-  const prompt = `You are a weather and horticulture expert. 
-    Analyze the weather below...
-
-    Temperature: ${today_json[0].temperature}
-    Precipitation: ${today_json[0].probabilityOfPrecipitation.value}%
-    Wind Speed: ${today_json[0].windSpeed}
-    detailedForecast: ${today_json[0].detailedForecast}
-
-    Return a JSON in the format
-    {
-        ai_message: "one to two sentences on how the weather may affect plants in a garden"
-    }
-    the string (one to two sentences) should be answered generally,something that an average
-    homeowner can understand about their plants. DO NOT return anything other than a JSON 
-    in the above format, thus no emojis, bullet points, ecetera in the short string.
-  `;
-
-  try {
-    const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Authorization": `Bearer ${process.env.GROQ_API_KEY}`,
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        model: "llama-3.1-8b-instant",
-        messages: [
-          { role: "system", content: "You are a plant and weather expert."},
-          { role: "user", content: prompt }
-        ],
-        temperature: 0.2        
-      })
-    });
-
-    const data = await response.json();
-
-    const parsed = JSON.parse(data.choices[0].message.content);
-
-    res.json(parsed);
-
-  } catch (error) {
-    console.error("AI weather error:", error);
-    res.status(500).json({
-      ai_message: "Weather conditions may affect your plants today. Check soil moisture and monitor for stress."
-    });
-  }
-});
-
-
 app.get("/", (req, res) => {
   res.redirect("/login.html");
 });
