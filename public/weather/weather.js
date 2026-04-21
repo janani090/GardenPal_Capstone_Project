@@ -7,7 +7,7 @@ const myheader = { 'User-Agent': 'GardenPal jt1118@scarletmail.rutgers.edu' };
 import {icon_choice, day_abrv, month_abrv} from './constant_weather.js'; // import constants
 
 async function getLatLong(city_name,state_name){
-    const url_geo = `http://api.openweathermap.org/geo/1.0/direct?q=${city_name},${state_name}&limit=5&appid=${apiKey}`;
+    const url_geo = `https://api.openweathermap.org/geo/1.0/direct?q=${city_name},${state_name}&limit=5&appid=${apiKey}`;
     try{
         const apiFetch = await fetch(url_geo);
         const apiData = await apiFetch.json();
@@ -41,7 +41,7 @@ async function getWeather(url_weather, ifHrly = false){
 }
 
 async function loadWeather(){
-    const url_weather = `http://api.weather.gov/points/${latlongDict[0].lat},${latlongDict[0].lon}`;
+    const url_weather = `https://api.weather.gov/points/${latlongDict[0].lat},${latlongDict[0].lon}`;
     var today_json = await getWeather(url_weather);
     var hrly_json = await getWeather(url_weather, true);
 
@@ -93,7 +93,7 @@ let latlongDict = await getLatLong(city_name,state_name);
 loadWeather();
 
 // Export weather data for precipitation graph in html page
-export let today_json = await getWeather(`http://api.weather.gov/points/${latlongDict[0].lat},${latlongDict[0].lon}`, true);
+export let today_json = await getWeather(`https://api.weather.gov/points/${latlongDict[0].lat},${latlongDict[0].lon}`, true);
 
 //Promise.resolve(getWeather(`https://api.weather.gov/points/${latlongDict[0].lat},${latlongDict[0].lon}`)).then(
 //    body=> console.log(body)
