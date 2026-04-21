@@ -10,6 +10,7 @@ const data = JSON.parse(fs.readFileSync("users.json"));
 const users = data.users;
 
 const app = express();
+const http = require('http');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -60,6 +61,20 @@ app.post("/api/update-sensor-data", (req, res) => {
   } catch (error) {
     res.status(500).json({ error: "Failed to update sensor data"});
   }
+});
+
+app.get('/camera-stream', (req, res) => {
+  http.get('http://127.0.0.1:8000/stream.mjpg', (streamRes) => {
+    res.writeHead(200, {
+      'Content-Type': streamRes.headers['content-type'] || 'multipart/x-mixed-replace; boundary=FRAME',
+      'Cache-Control': 'no-cache',
+      'Pragma': 'no-cache'
+    });
+    streamRes.pipe(res);
+  }).on('error', (err) => {
+    console.error('Camera stream error:', err.message);
+    res.status(500).send('Camera stream unavailable');
+  });
 });
 
 app.use(express.json());
