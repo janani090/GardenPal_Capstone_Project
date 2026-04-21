@@ -97,6 +97,57 @@ app.post("/api/analyze-plant", async (req, res) => {
   }
 });
 
+app.post("/ai-weather", async (req, res) => {
+  try {
+    const today_json = req.body;
+
+    if (!today_json || !today_json[0]) {
+      return res.status(400).json({ error: "Invalid input format" });
+    }
+
+    const prompt = `You are a weather and horticulture expert. Analyze the weather below.
+Temperature: ${today_json[0].temperature}
+Precipitation: ${today_json[0].probabilityOfPrecipitation?.value ?? "N/A"}%
+Wind Speed: ${today_json[0].windSpeed}
+Detailed Forecast: ${today_json[0].detailedForecast}
+
+Return a JSON in the format:
+{"ai_message":"one to two sentences on how the weather may affect plants today and what a homeowner should know."}
+
+Do not return anything except valid JSON.`;
+
+    const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${process.env.GROQ_API_KEY}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        model: "llama-3.1-8b-instant",
+        messages: [
+          { role: "system", content: "You are a plant and weather expert." },
+          { role: "user", content: prompt }
+        ],
+        temperature: 0.2
+      })
+    });
+
+    const data = await response.json();
+
+    if (!data.choices || !data.choices[0]?.message?.content) {
+      console.error("Groq bad response:", data);
+      return res.status(500).json({ error: "AI response missing" });
+    }
+
+    const ai_response = data.choices[0].message.content;
+    res.json({ ai_response });
+
+  } catch (error) {
+    console.error("AI weather route error:", error);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
 app.get("/", (req, res) => {
   res.redirect("/login.html");
 });

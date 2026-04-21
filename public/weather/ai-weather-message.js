@@ -56,7 +56,3 @@ app.post('/ai-weather', async (req, res) => {
         return res.status(500).json({ error: "Invalid AI response" });
     }
 });
-
-app.listen(3000, () => {
-    console.log('Server is running on http://localhost:3000');
-});

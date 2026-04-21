@@ -76,7 +76,7 @@ async function loadWeather(){
         document.getElementById(`day-${i}-report`).innerHTML = iconDescp;
     }
     
-    const response = await fetch("http://localhost:3000/ai-weather", {
+    const response = await fetch("/ai-weather", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
