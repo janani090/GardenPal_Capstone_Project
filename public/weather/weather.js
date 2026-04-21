@@ -41,7 +41,7 @@ async function getWeather(url_weather, ifHrly = false){
 }
 
 async function loadWeather(){
-    const url_weather = `https://api.weather.gov/points/${latlongDict[0].lat},${latlongDict[0].lon}`;
+    const url_weather = `http://api.weather.gov/points/${latlongDict[0].lat},${latlongDict[0].lon}`;
     var today_json = await getWeather(url_weather);
     var hrly_json = await getWeather(url_weather, true);
 
@@ -58,7 +58,7 @@ async function loadWeather(){
     document.getElementById("today-day").innerHTML = day_name;
     document.getElementById("today-temp").innerHTML = today_json[0].temperature;
     document.getElementById("today-img").innerHTML =`<img src="./weather-icon-${iconImg}.png">`;
-    document.getElementById("today-precip").innerHTML = hrly_json[0].probabilityOfPrecipitation.value || today_json[0].probabilityOfPrecipitation;
+    document.getElementById("today-precip").innerHTML = hrly_json[0].probabilityOfPrecipitation.value;
     document.getElementById("today-humid").innerHTML = hrly_json[0].relativeHumidity.value || today_json[0].relativeHumidity; 
     document.getElementById("today-wind").innerHTML = hrly_json[0].windSpeed || today_json[0].windSpeed;
     document.getElementById("today-report").innerHTML = today_json[0].shortForecast;
@@ -93,7 +93,7 @@ let latlongDict = await getLatLong(city_name,state_name);
 loadWeather();
 
 // Export weather data for precipitation graph in html page
-export let today_json = await getWeather(`https://api.weather.gov/points/${latlongDict[0].lat},${latlongDict[0].lon}`, true);
+export let today_json = await getWeather(`http://api.weather.gov/points/${latlongDict[0].lat},${latlongDict[0].lon}`, true);
 
 //Promise.resolve(getWeather(`https://api.weather.gov/points/${latlongDict[0].lat},${latlongDict[0].lon}`)).then(
 //    body=> console.log(body)

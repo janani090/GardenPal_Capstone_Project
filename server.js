@@ -3,6 +3,7 @@ import session from "express-session";
 import fs from "fs";
 import dotenv from "dotenv";
 import {analyzePlant} from "./ai-test/analyzePlant.js";
+import http from 'http';
 
 dotenv.config();
 
@@ -10,7 +11,6 @@ const data = JSON.parse(fs.readFileSync("users.json"));
 const users = data.users;
 
 const app = express();
-const http = require('http');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
