@@ -1,26 +1,24 @@
 {
   "plants": {
     "plant1": {
-      "timestamp": "2026-04-13 17:50:20",
-      "soil_percentage": 63.147605083088955,
-      "light_lux": 216.25,
-      "temperature_F": 77.72,
-      "humidity_%": 47
+      "timestamp": "2026-04-21 13:45:19",
+      "soil_percentage": 85.82600195503422,
+      "light_lux": 1.25,
+      "temperature_F": 1,
+      "humidity_%": 1
     },
     "plant2": {
-      "timestamp": "2026-04-13 17:50:20",
-      "soil_percentage": 13.48973607038123,
-      "light_lux": 216.25,
-      "temperature_F": 76.46000000000001,
-      "humidity_%": 46.9
+      "timestamp": "2026-04-21 13:45:19",
+      "soil_percentage": 4.203323558162268,
+      "light_lux": 1.25,
+      "temperature_F": 71.06,
+      "humidity_%": 31.4
     }
   },
-
   "predator": {
-    "predatorTrue": true,
-    "type": "rabbit",
-    "timestamp": "2026-04-17 14:45:00",
+    "predatorTrue": false,
+    "type": null,
+    "timestamp": "2026-04-21 13:43:56",
     "plantKey": "plant2"
   }
-
 }
