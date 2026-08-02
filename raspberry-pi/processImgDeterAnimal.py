@@ -1,8 +1,9 @@
 import warnings
 warnings.filterwarnings("ignore", category=UserWarning)
 
-import tflite_runtime.interpreter as tflite
-from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
+import tensorflow.lite as tfile
+def preprocess_input(x):
+	return x / 127.5 - 1.0
 import cv2
 from PIL import Image
 import numpy as np
@@ -15,7 +16,7 @@ logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
 
 animals = ['raccoon', 'deer', 'squirrel']
-class_model = tflite.Interpreter(model_path = "gardenPal_animal_model.tflite")
+class_model = tfile.Interpreter(model_path = "gardenPal_animal_model.tflite")
 class_model.allocate_tensors()
 input_det = class_model.get_input_details()
 output_det = class_model.get_output_details()

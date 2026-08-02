@@ -1,0 +1,18 @@
+
+--- Accuracy by animal ---
+raccoon: 100.00% (7 photos)
+deer: 0.00% (6 photos)
+squirrel: 16.67% (6 photos)
+
+--- Accuracy by light level ---
+bright: accuracy=33.33%, avg confidence=0.613 (6 photos)
+dim: accuracy=50.00%, avg confidence=0.620 (6 photos)
+dark: accuracy=42.86%, avg confidence=0.553 (7 photos)
+
+--- Deterrent activation outcomes ---
+missed: 19
+
+--- Control (empty background) results ---
+control_bright_1.jpg (bright): predicted=raccoon, confidence=0.607 -> correctly suppressed
+control_dark_1.jpg (dark): predicted=raccoon, confidence=0.567 -> correctly suppressed
+control_dim_1.jpg (dim): predicted=raccoon, confidence=0.611 -> correctly suppressed

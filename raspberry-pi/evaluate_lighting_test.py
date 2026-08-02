@@ -6,7 +6,8 @@ from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 import matplotlib.pyplot as plt
 
 from processImgDeterAnimal import class_model, input_det, output_det, animals, detectHuman
-from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
+def preprocess_input(x):
+	return x / 127.5 - 1.0
 from PIL import Image
 
 CAPTURE_DIR = "lighting_test_captures"   # folder with your bright/dim/dark photos
