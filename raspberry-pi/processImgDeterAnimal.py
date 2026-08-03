@@ -2,8 +2,6 @@ import warnings
 warnings.filterwarnings("ignore", category=UserWarning)
 
 import tensorflow.lite as tfile
-def preprocess_input(x):
-	return x / 127.5 - 1.0
 import cv2
 from PIL import Image
 import numpy as np
@@ -34,7 +32,6 @@ def processImgML(img):
 	img_pil = Image.fromarray(img_rgb)
 	img_pil = img_pil.resize((224,224), Image.BICUBIC)
 	img_data = np.array(img_pil, dtype="float32")
-	img_data = preprocess_input(img_data)
 	img_data = np.expand_dims(img_data, axis=0)
 	# space
 	class_model.set_tensor(input_det[0]['index'], img_data)

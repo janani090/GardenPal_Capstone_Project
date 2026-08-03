@@ -6,8 +6,6 @@ from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 import matplotlib.pyplot as plt
 
 from processImgDeterAnimal import class_model, input_det, output_det, animals, detectHuman
-def preprocess_input(x):
-	return x / 127.5 - 1.0
 from PIL import Image
 
 CAPTURE_DIR = "lighting_test_captures"   # folder with your bright/dim/dark photos
@@ -19,12 +17,19 @@ CONFIDENCE_THRESHOLD = 0.65
 def classify_with_confidence(img):
     img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     img_pil = Image.fromarray(img_rgb).resize((224, 224), Image.BICUBIC)
-    img_data = preprocess_input(np.array(img_pil, dtype="float32"))
+    # The TFLite model already contains preprocess_input internally.
+    img_data = np.array(img_pil, dtype="float32")
     img_data = np.expand_dims(img_data, axis=0)
     class_model.set_tensor(input_det[0]['index'], img_data)
     class_model.invoke()
     out = class_model.get_tensor(output_det[0]['index'])[0]
-    return animals[np.argmax(out)], float(np.max(out))
+    pred_index = int(np.argmax(out))
+    confidence = float(np.max(out))
+    print(
+        f"raw={out} | predicted={animals[pred_index]} | "
+        f"confidence={confidence:.3f}"
+    )
+    return animals[pred_index], confidence
 
 rows = []
 control_rows = []
