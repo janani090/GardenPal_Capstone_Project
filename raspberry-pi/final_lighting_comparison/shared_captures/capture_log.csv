@@ -1,4 +1,11 @@
 filename,species,light_level,lux,timestamp
+squirrel_dark_1.jpg,squirrel,dark,7.916666666666667,2026-08-03 20:11:53
+squirrel_dark_2.jpg,squirrel,dark,7.916666666666667,2026-08-03 20:12:46
+squirrel_dark_2.jpg,squirrel,dark,7.916666666666667,2026-08-03 20:15:05
+raccoon_dark_1.jpg,raccoon,dark,7.916666666666667,2026-08-03 20:16:47
+raccoon_dark_2.jpg,raccoon,dark,7.916666666666667,2026-08-03 20:17:36
+deer_dark_1.jpg,deer,dark,7.916666666666667,2026-08-03 20:18:24
+deer_dark_2.jpg,deer,dark,7.916666666666667,2026-08-03 20:19:08
 squirrel_dim_1.jpg,squirrel,dim,11.25,2026-08-03 20:20:12
 squirrel_dim_2.jpg,squirrel,dim,11.25,2026-08-03 20:21:05
 raccoon_dim_1.jpg,raccoon,dim,11.25,2026-08-03 20:21:55
@@ -11,9 +18,3 @@ raccoon_bright_1.jpg,raccoon,bright,35.0,2026-08-03 20:26:49
 raccoon_bright_2.jpg,raccoon,bright,35.41666666666667,2026-08-03 20:27:29
 deer_bright_1.jpg,deer,bright,35.41666666666667,2026-08-03 20:28:29
 deer_bright_2.jpg,deer,bright,35.41666666666667,2026-08-03 20:29:02
-squirrel_dark_1.jpg,squirrel,dark,0.4166666666666667,2026-08-03 21:14:48
-squirrel_dark_2.jpg,squirrel,dark,0.4166666666666667,2026-08-03 21:15:41
-raccoon_dark_1.jpg,raccoon,dark,0.4166666666666667,2026-08-03 21:16:24
-raccoon_dark_2.jpg,raccoon,dark,0.4166666666666667,2026-08-03 21:16:47
-deer_dark_1.jpg,deer,dark,0.8333333333333334,2026-08-03 21:20:27
-deer_dark_2.jpg,deer,dark,0.8333333333333334,2026-08-03 21:20:58

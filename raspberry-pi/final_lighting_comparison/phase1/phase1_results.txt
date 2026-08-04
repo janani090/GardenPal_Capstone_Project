@@ -1,0 +1,34 @@
+raw=[1.4593131e-05 9.9928361e-01 7.0180424e-04] | predicted=deer | confidence=0.999
+raw=[2.7441647e-05 9.9905032e-01 9.2226214e-04] | predicted=deer | confidence=0.999
+raw=[1.5877711e-05 9.9734950e-01 2.6345321e-03] | predicted=deer | confidence=0.997
+raw=[3.9031575e-04 9.9606907e-01 3.5406176e-03] | predicted=deer | confidence=0.996
+raw=[2.6714708e-06 9.9973363e-01 2.6379188e-04] | predicted=deer | confidence=1.000
+raw=[5.6529490e-05 6.0078543e-01 3.9915803e-01] | predicted=deer | confidence=0.601
+raw=[9.9999881e-01 1.6849656e-10 1.1530185e-06] | predicted=raccoon | confidence=1.000
+raw=[9.9960679e-01 1.7552377e-08 3.9317808e-04] | predicted=raccoon | confidence=1.000
+raw=[9.999691e-01 9.258071e-08 3.079010e-05] | predicted=raccoon | confidence=1.000
+raw=[9.965526e-01 1.164222e-07 3.447330e-03] | predicted=raccoon | confidence=0.997
+raw=[9.9999928e-01 1.4691801e-10 7.2279016e-07] | predicted=raccoon | confidence=1.000
+raw=[9.9948323e-01 3.2363043e-09 5.1668752e-04] | predicted=raccoon | confidence=0.999
+raw=[4.9185976e-03 1.1990655e-09 9.9508142e-01] | predicted=squirrel | confidence=0.995
+raw=[1.4586778e-03 2.1830704e-08 9.9854136e-01] | predicted=squirrel | confidence=0.999
+raw=[2.6638358e-04 1.6089164e-07 9.9973339e-01] | predicted=squirrel | confidence=1.000
+raw=[4.3267113e-01 1.5275256e-05 5.6731361e-01] | predicted=squirrel | confidence=0.567
+raw=[4.2716055e-03 7.1313160e-08 9.9572831e-01] | predicted=squirrel | confidence=0.996
+raw=[1.0298457e-03 1.9431914e-10 9.9897015e-01] | predicted=squirrel | confidence=0.999
+
+--- Accuracy by animal ---
+raccoon: 100.00% (6 photos)
+deer: 100.00% (6 photos)
+squirrel: 100.00% (6 photos)
+
+--- Accuracy by light level ---
+bright: accuracy=100.00%, avg confidence=0.999 (6 photos)
+dim: accuracy=100.00%, avg confidence=0.932 (6 photos)
+dark: accuracy=100.00%, avg confidence=0.926 (6 photos)
+
+--- Deterrent activation outcomes ---
+correct: 16
+missed: 2
+
+--- Control (empty background) results ---
