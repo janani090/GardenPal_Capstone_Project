@@ -1,35 +1,98 @@
 raw=[1.4593131e-05 9.9928361e-01 7.0180424e-04] | predicted=deer | confidence=0.999
 raw=[2.7441647e-05 9.9905032e-01 9.2226214e-04] | predicted=deer | confidence=0.999
+raw=[9.5164993e-05 9.9781919e-01 2.0857134e-03] | predicted=deer | confidence=0.998
+raw=[1.3998928e-06 9.9977547e-01 2.2311058e-04] | predicted=deer | confidence=1.000
+raw=[1.4314469e-03 9.9817896e-01 3.8952619e-04] | predicted=deer | confidence=0.998
+raw=[9.1343111e-01 1.5790914e-05 8.6553037e-02] | predicted=raccoon | confidence=0.913
+raw=[1.2496038e-04 9.9911982e-01 7.5520936e-04] | predicted=deer | confidence=0.999
+raw=[1.1533528e-05 9.9770075e-01 2.2877760e-03] | predicted=deer | confidence=0.998
+raw=[1.3112712e-04 9.2405629e-01 7.5812578e-02] | predicted=deer | confidence=0.924
 raw=[0.3645995  0.01535412 0.6200464 ] | predicted=squirrel | confidence=0.620
 raw=[0.7389954  0.00503037 0.2559742 ] | predicted=raccoon | confidence=0.739
+raw=[0.39713567 0.12193415 0.4809302 ] | predicted=squirrel | confidence=0.481
+raw=[0.06311243 0.47794273 0.45894492] | predicted=deer | confidence=0.478
+raw=[0.49086758 0.05521705 0.45391542] | predicted=raccoon | confidence=0.491
+raw=[0.529515   0.14875539 0.32172957] | predicted=raccoon | confidence=0.530
+raw=[0.29227224 0.68451136 0.02321639] | predicted=deer | confidence=0.685
+raw=[0.5261753  0.00229426 0.4715304 ] | predicted=raccoon | confidence=0.526
+raw=[0.57298476 0.0347135  0.3923018 ] | predicted=raccoon | confidence=0.573
 raw=[2.6714708e-06 9.9973363e-01 2.6379188e-04] | predicted=deer | confidence=1.000
 raw=[5.6529490e-05 6.0078543e-01 3.9915803e-01] | predicted=deer | confidence=0.601
+raw=[8.9523423e-04 9.3552160e-01 6.3583195e-02] | predicted=deer | confidence=0.936
+raw=[6.2317945e-06 9.9945396e-01 5.3982448e-04] | predicted=deer | confidence=0.999
+raw=[1.086735e-05 9.999083e-01 8.083954e-05] | predicted=deer | confidence=1.000
+raw=[5.0190192e-01 3.3052568e-04 4.9776757e-01] | predicted=raccoon | confidence=0.502
+raw=[1.0255291e-04 9.9858701e-01 1.3105677e-03] | predicted=deer | confidence=0.999
+raw=[6.4691412e-05 9.8461807e-01 1.5317263e-02] | predicted=deer | confidence=0.985
+raw=[9.4683237e-05 9.4469476e-01 5.5210575e-02] | predicted=deer | confidence=0.945
 raw=[9.9999881e-01 1.6849656e-10 1.1530185e-06] | predicted=raccoon | confidence=1.000
 raw=[9.9960679e-01 1.7552377e-08 3.9317808e-04] | predicted=raccoon | confidence=1.000
+raw=[9.9996305e-01 3.6910135e-09 3.6976373e-05] | predicted=raccoon | confidence=1.000
+raw=[9.8786700e-01 5.5344174e-09 1.2132989e-02] | predicted=raccoon | confidence=0.988
+raw=[9.9993682e-01 2.4200694e-12 6.3193453e-05] | predicted=raccoon | confidence=1.000
+raw=[9.8831123e-01 7.3463048e-07 1.1688055e-02] | predicted=raccoon | confidence=0.988
+raw=[9.9998164e-01 1.2751555e-10 1.8388520e-05] | predicted=raccoon | confidence=1.000
+raw=[9.9982709e-01 6.6108136e-08 1.7285103e-04] | predicted=raccoon | confidence=1.000
+raw=[9.9997091e-01 1.7368086e-11 2.9086659e-05] | predicted=raccoon | confidence=1.000
 raw=[0.5427333 0.0020129 0.4552537] | predicted=raccoon | confidence=0.543
 raw=[0.27172282 0.05157341 0.67670375] | predicted=squirrel | confidence=0.677
+raw=[0.96214706 0.00165108 0.03620189] | predicted=raccoon | confidence=0.962
+raw=[0.703826   0.07301459 0.22315943] | predicted=raccoon | confidence=0.704
+raw=[9.4910955e-01 6.2231942e-05 5.0828259e-02] | predicted=raccoon | confidence=0.949
+raw=[0.3737228  0.02630837 0.5999688 ] | predicted=squirrel | confidence=0.600
+raw=[0.85583305 0.00094242 0.1432245 ] | predicted=raccoon | confidence=0.856
+raw=[9.8673403e-01 4.9178179e-05 1.3216792e-02] | predicted=raccoon | confidence=0.987
+raw=[0.32790998 0.0111482  0.66094184] | predicted=squirrel | confidence=0.661
 raw=[9.9999928e-01 1.4691801e-10 7.2279016e-07] | predicted=raccoon | confidence=1.000
 raw=[9.9948323e-01 3.2363043e-09 5.1668752e-04] | predicted=raccoon | confidence=0.999
+raw=[9.9997258e-01 6.3579112e-12 2.7444277e-05] | predicted=raccoon | confidence=1.000
+raw=[9.9987578e-01 3.1397633e-08 1.2418439e-04] | predicted=raccoon | confidence=1.000
+raw=[9.9999690e-01 1.0339867e-10 3.1488073e-06] | predicted=raccoon | confidence=1.000
+raw=[9.9457246e-01 4.0104953e-07 5.4271678e-03] | predicted=raccoon | confidence=0.995
+raw=[9.9999046e-01 6.5094098e-12 9.4816287e-06] | predicted=raccoon | confidence=1.000
+raw=[9.6495271e-01 8.8118721e-09 3.5047267e-02] | predicted=raccoon | confidence=0.965
+raw=[9.9938130e-01 5.7436964e-08 6.1868422e-04] | predicted=raccoon | confidence=0.999
 raw=[4.9185976e-03 1.1990655e-09 9.9508142e-01] | predicted=squirrel | confidence=0.995
 raw=[1.4586778e-03 2.1830704e-08 9.9854136e-01] | predicted=squirrel | confidence=0.999
+raw=[6.2422987e-05 4.5505753e-06 9.9993300e-01] | predicted=squirrel | confidence=1.000
+raw=[5.3377047e-02 1.2020733e-05 9.4661099e-01] | predicted=squirrel | confidence=0.947
+raw=[7.518960e-01 5.745403e-05 2.480465e-01] | predicted=raccoon | confidence=0.752
+raw=[1.20833460e-02 1.30488925e-05 9.87903655e-01] | predicted=squirrel | confidence=0.988
+raw=[2.9803521e-03 5.3929643e-06 9.9701428e-01] | predicted=squirrel | confidence=0.997
+raw=[7.7618212e-03 3.3738245e-06 9.9223483e-01] | predicted=squirrel | confidence=0.992
+raw=[2.0378537e-04 6.6017627e-08 9.9979621e-01] | predicted=squirrel | confidence=1.000
 raw=[0.53103703 0.05793446 0.4110285 ] | predicted=raccoon | confidence=0.531
 raw=[0.71927136 0.02128294 0.25944573] | predicted=raccoon | confidence=0.719
+raw=[0.08599253 0.00946152 0.90454596] | predicted=squirrel | confidence=0.905
+raw=[0.16732904 0.13561928 0.69705164] | predicted=squirrel | confidence=0.697
+raw=[0.09338585 0.02137473 0.88523936] | predicted=squirrel | confidence=0.885
+raw=[0.30523282 0.02163649 0.6731307 ] | predicted=squirrel | confidence=0.673
+raw=[8.5426405e-02 1.1454484e-04 9.1445905e-01] | predicted=squirrel | confidence=0.914
+raw=[0.59533733 0.20016617 0.20449652] | predicted=raccoon | confidence=0.595
+raw=[0.61348534 0.03440586 0.35210884] | predicted=raccoon | confidence=0.613
 raw=[4.2716055e-03 7.1313160e-08 9.9572831e-01] | predicted=squirrel | confidence=0.996
 raw=[1.0298457e-03 1.9431914e-10 9.9897015e-01] | predicted=squirrel | confidence=0.999
+raw=[1.2890360e-05 2.8117609e-06 9.9998426e-01] | predicted=squirrel | confidence=1.000
+raw=[9.7921316e-04 4.6233026e-07 9.9902034e-01] | predicted=squirrel | confidence=0.999
+raw=[2.9213275e-04 1.1737803e-07 9.9970776e-01] | predicted=squirrel | confidence=1.000
+raw=[8.7021841e-03 1.8345416e-07 9.9129760e-01] | predicted=squirrel | confidence=0.991
+raw=[3.4246758e-01 2.3473687e-07 6.5753216e-01] | predicted=squirrel | confidence=0.658
+raw=[5.9469217e-01 5.8967515e-08 4.0530774e-01] | predicted=raccoon | confidence=0.595
+raw=[1.3650781e-02 8.5407493e-07 9.8634839e-01] | predicted=squirrel | confidence=0.986
 
 --- Accuracy by animal ---
-raccoon: 83.33% (6 photos)
-deer: 66.67% (6 photos)
-squirrel: 66.67% (6 photos)
+raccoon: 88.89% (27 photos)
+deer: 66.67% (27 photos)
+squirrel: 77.78% (27 photos)
 
 --- Accuracy by light level ---
-bright: accuracy=100.00%, avg confidence=0.999 (6 photos)
-dim: accuracy=100.00%, avg confidence=0.932 (6 photos)
-dark: accuracy=16.67%, avg confidence=0.638 (6 photos)
+bright: accuracy=92.59%, avg confidence=0.980 (27 photos)
+dim: accuracy=92.59%, avg confidence=0.931 (27 photos)
+dark: accuracy=48.15%, avg confidence=0.689 (27 photos)
 
 --- Deterrent activation outcomes ---
-correct: 11
-missed: 4
-incorrect: 3
+correct: 60
+incorrect: 6
+missed: 15
 
 --- Control (empty background) results ---
